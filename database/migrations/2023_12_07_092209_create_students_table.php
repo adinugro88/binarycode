@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer("nonik");
             $table->string("name");
-            $table->kelas("kelas");
+            $table->string("kelas");
             $table->string("sekolah")->nullable();
             $table->string("alamat")->nullable();
             $table->string("phone")->nullable();
