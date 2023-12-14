@@ -77,7 +77,7 @@
         <div class="card login-box-container">
             <div class="card-body">
                 <div class="authent-logo">
-                    <img src="../../assets/images/logo@2x.png" alt="">
+                    <img width="200" src="{{asset("logo.png")}}" alt="">
                 </div>
                 <div class="authent-text">
                     <p>Welcome to Circl</p>
