@@ -80,7 +80,7 @@
                     <img width="200" src="{{asset("logo.png")}}" alt="">
                 </div>
                 <div class="authent-text">
-                    <p>Welcome to Circl</p>
+                    <p>Welcome to Binary</p>
                     <p>Please Sign-in to your account.</p>
                 </div>
 
@@ -121,9 +121,9 @@
                 @endif
                 </div>
                   </form>
-                  <div class="authent-reg">
+                  {{-- <div class="authent-reg">
                       <p>Not registered? <a href="register.html">Create an account</a></p>
-                  </div>
+                  </div> --}}
             </div>
         </div>
     </div>
