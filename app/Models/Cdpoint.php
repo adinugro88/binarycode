@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cdpoint extends Model
 {
     use HasFactory;
+    protected $table = 'cdpoints';
+    protected $guarded = [];
+    
 }
