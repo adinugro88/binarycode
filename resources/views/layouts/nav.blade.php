@@ -17,7 +17,7 @@
             Settings
         </li>
         <li>
-            <a href="/student"><i data-feather="user"></i>Students</a>
+            <a href="/admin/student"><i data-feather="user"></i>Students</a>
         </li>
         <li>
             <a href=""><i data-feather="calendar"></i>Kategori</a>

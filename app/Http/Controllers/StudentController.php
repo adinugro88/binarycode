@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Student;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
@@ -14,7 +14,8 @@ class StudentController extends Controller
     
     public function index()
     {
-        
+        $student = Student::orderBy('id','DESC')->paginate(10);
+        return view("pages.student",compact("student"));
     }
 
     /**
