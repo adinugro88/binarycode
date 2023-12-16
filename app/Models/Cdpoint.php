@@ -10,5 +10,10 @@ class Cdpoint extends Model
     use HasFactory;
     protected $table = 'cdpoints';
     protected $guarded = [];
-    
+
+  
+    public function Card()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }

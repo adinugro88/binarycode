@@ -11,4 +11,15 @@ class Kategori extends Model
     protected $table = 'kategoris';
     protected $guarded = [];
 
+    
+    public function Student()
+    {
+        return $this->belongsTo(Student::class,);
+    }
+
+ 
+    public function Katgoripoint()
+    {
+        return $this->hasMany(Kategori::class,);
+    }
 }

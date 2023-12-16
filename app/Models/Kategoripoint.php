@@ -11,4 +11,9 @@ class Kategoripoint extends Model
     protected $table = "kategoripoints";
     protected $guarded = [];
 
+ 
+    public function Kategori()
+    {
+        return $this->belongsTo(Kategori::class,);
+    }
 }

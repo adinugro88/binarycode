@@ -10,4 +10,16 @@ class Student extends Model
     use HasFactory;
     protected $table = 'students';
     protected $guarded = [];
+
+
+    public function Kategori()
+    {
+        return $this->hasMany(kategori::class,);
+    }
+
+   
+    public function Card()
+    {
+        return $this->hasMany(Card::class,);
+    }
 }
