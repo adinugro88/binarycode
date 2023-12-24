@@ -30,6 +30,8 @@
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        @livewireStyles
 </head>
 
 <body>
@@ -50,7 +52,9 @@
         </div>
 
     </div>
+    @livewireScripts
 
+    
     <!-- Javascripts -->
     <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -58,6 +62,8 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
     <script src="../../assets/js/main.min.js"></script>
+
+   
 </body>
 
 </html>
