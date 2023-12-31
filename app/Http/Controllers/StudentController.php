@@ -18,9 +18,6 @@ class StudentController extends Controller
         return view("pages.student",compact("student"));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //

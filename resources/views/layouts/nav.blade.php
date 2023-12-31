@@ -4,13 +4,13 @@
             Main
         </li>
         <li>
-            <a href="index.html"><i data-feather="home"></i>Dashboard</a>
+            <a href="/admin/home"><i data-feather="home"></i>Dashboard</a>
         </li>
         <li class="sidebar-title">
             Apps
         </li>
         <li>
-            <a href="social.html"><i data-feather="user"></i>Sertifikat</a>
+            <a href="/admin/sertifikat"><i data-feather="user"></i>Sertifikat</a>
         </li>
       
         <li class="sidebar-title">
@@ -20,7 +20,7 @@
             <a href="/admin/student"><i data-feather="user"></i>Students</a>
         </li>
         <li>
-            <a href=""><i data-feather="calendar"></i>Kategori</a>
+            <a href="/admin/kategori"><i data-feather="calendar"></i>Kategori</a>
         </li>
     </ul>
 </div>

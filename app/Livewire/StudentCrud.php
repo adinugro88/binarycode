@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Student;
 use Livewire\WithPagination;
 
+
 class StudentCrud extends Component
 {
     use WithPagination;
@@ -14,23 +15,35 @@ class StudentCrud extends Component
 
     public function render()
     {
-        $student = Student::latest()->paginate(10);
-        return view('livewire.student-crud', ['student' => $student]);
+        $student = Student::paginate(10);
+        return view('livewire.student.student-crud', ['student' => $student]);
     }
 
 
-    public function reset()
+    public function resettext()
     {
-        $nonik      = "";
-        $name       = "";
-        $kelas      = "";
-        $sekolah    = "";
-        $alamat     = "";
-        $phone      = "";
+        $this->nonik      = "";
+        $this->name       = "";
+        $this->kelas      = "";
+        $this->sekolah    = "";
+        $this->alamat     = "";
+        $this->phone      = "";
     }
 
     public function tambah ()
     {
         
+        Student::Create([
+            'nonik'     => $this->nonik,
+            'name'      => $this->name,
+            'kelas'     => $this->kelas,
+            'sekolah'   => $this->sekolah,
+            'alamat'    => $this->alamat,
+            'phone'     => $this->phone,
+        ]);
+
+        $this->resettext();
+        $this->dispatch('closeModal');
+
     }
 }

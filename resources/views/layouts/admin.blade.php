@@ -11,7 +11,7 @@
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Circl - Responsive Admin Dashboard Template</title>
+    <title>Program Sertifikat BinaryKiddo</title>
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
@@ -53,8 +53,8 @@
 
     </div>
     @livewireScripts
-
-    
+ 
+    @yield('script')
     <!-- Javascripts -->
     <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -62,8 +62,8 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
     <script src="../../assets/js/main.min.js"></script>
+    
 
-   
 </body>
 
 </html>
