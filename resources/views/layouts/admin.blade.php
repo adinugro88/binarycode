@@ -53,8 +53,8 @@
 
     </div>
     @livewireScripts
- 
     @yield('script')
+    
     <!-- Javascripts -->
     <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>

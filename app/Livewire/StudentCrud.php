@@ -15,7 +15,7 @@ class StudentCrud extends Component
 
     public function render()
     {
-        $student = Student::paginate(10);
+        $student = Student::latest()->paginate(10);
         return view('livewire.student.student-crud', ['student' => $student]);
     }
 
@@ -43,7 +43,6 @@ class StudentCrud extends Component
         ]);
 
         $this->resettext();
-        $this->dispatch('closeModal');
-
+        
     }
 }

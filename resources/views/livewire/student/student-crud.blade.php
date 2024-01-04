@@ -1,5 +1,6 @@
 <div>
     @include('livewire.student.tambah')
+
     <div class="row">
         <div class="row">
             <div class="col">
@@ -58,8 +59,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div >
-                          {{ $student->links('pagination::bootstrap-5') }}
+                        <div>
+                            {{ $student->links('pagination::bootstrap-5') }}
                         </div>
                     </div>
 
