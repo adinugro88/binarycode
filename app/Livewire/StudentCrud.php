@@ -41,8 +41,8 @@ class StudentCrud extends Component
             'alamat'    => $this->alamat,
             'phone'     => $this->phone,
         ]);
-
+        session()->flash('message','Student Added Successfully');
         $this->resettext();
-        
+        $this->dispatch('close-modal');
     }
 }

@@ -9,11 +9,11 @@
 
 @section('script')
 <script>
-    window.addEventListener('closeModal', event => {
+    window.addEventListener('close-modal', event => {
 
-        $('#modalshow').modal('hide');
-        // $('#updateStudentModal').modal('hide');
-        // $('#deleteStudentModal').modal('hide');
+        $('#studentModal').modal('hide');
+        $('#updateStudentModal').modal('hide');
+        $('#deleteStudentModal').modal('hide');
     })
 </script>
 @endsection
