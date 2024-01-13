@@ -13,13 +13,9 @@ class StudentCrud extends Component
     public $no = 1;
     public $nonik,$name,$kelas,$sekolah,$alamat,$phone;
 
-    public function render()
-    {
-        $student = Student::latest()->paginate(10);
-        return view('livewire.student.student-crud', ['student' => $student]);
-    }
 
 
+    
     public function resettext()
     {
         $this->nonik      = "";
@@ -30,9 +26,20 @@ class StudentCrud extends Component
         $this->phone      = "";
     }
 
+    public function rules()
+    {
+        return [
+            'nonik'     => 'required|numeric',
+            'name'      => 'required',
+            'kelas'     => 'required',
+            'sekolah'   => 'required',
+            'phone'     => 'required'
+        ];
+    }
+
     public function tambah ()
     {
-        
+        $this->validate();
         Student::Create([
             'nonik'     => $this->nonik,
             'name'      => $this->name,
@@ -41,8 +48,16 @@ class StudentCrud extends Component
             'alamat'    => $this->alamat,
             'phone'     => $this->phone,
         ]);
-        session()->flash('message','Student Added Successfully');
+        session()->flash('message','Berhasil menambahkan murid ');
         $this->resettext();
         $this->dispatch('close-modal');
     }
+
+    public function render()
+    {
+        $student = Student::latest()->paginate(10);
+        return view('livewire.student.student-crud', ['student' => $student]);
+    }
+
+
 }

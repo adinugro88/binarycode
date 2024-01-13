@@ -1,5 +1,6 @@
 <div>
     @include('livewire.student.tambah')
+    @include('livewire.student.edit')
     <div class="row">
         <div class="row">
             <div class="col">
@@ -24,8 +25,8 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">Kelas</th>
                                         <th scope="col">Sekolah</th>
-                                        <th scope="col">Alamat</th>
                                         <th scope="col">Phone</th>
+                                        <th scope="col">Alamat</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -37,9 +38,8 @@
                                         <td>{{ $data->name }}</td>
                                         <td>{{ $data->kelas }}</td>
                                         <td>{{ $data->sekolah }}</td>
-                                        <td>{{ $data->alamat }}</td>
                                         <td>{{ $data->phone }}</td>
-    
+                                        <td>{{ $data->alamat }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <button id="btnGroupDrop1" type="button"
