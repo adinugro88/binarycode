@@ -1,7 +1,11 @@
 <div>
-    @include('livewire.student.tambah')
-    @include('livewire.student.edit')
+   
+       
+
+  
     <div class="row">
+        @include('livewire.student.tambah')
+        @include('livewire.student.edit')
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -16,8 +20,8 @@
                             data-bs-target="#studentModal">
                             tambah murid
                         </button>
-                        <div class="table-responsive">
-                            <table class="table">
+                        <div class="table-responsive" style="min-height: 400px;">
+                            <table class="table" >
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -31,9 +35,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($student as $index => $data)
+                                    @foreach ($student as $data)
                                     <tr>
-                                        <td>{{($student->currentPage() - 1) * $student->perPage() + $loop->iteration}}</td>
+                                        <td> {{ $student->count() * ($student->currentPage() - 1) + $loop->iteration }}</td>
                                         <td>{{ $data->nonik }}</td>
                                         <td>{{ $data->name }}</td>
                                         <td>{{ $data->kelas }}</td>
@@ -48,8 +52,8 @@
                                                     Action
                                                 </button>
                                                 <ul class="dropdown-menu py-3" aria-labelledby="btnGroupDrop1">
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button
-                                                                type="button" class="btn btn-info mb-2">Edit</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
+                                                                type="button" class="btn btn-info mb-2" data-bs-target="#updateStudentModal" data-bs-toggle="modal">Edit</button></a>
                                                     </li>
                                                     <li><a class="dropdown-item p-0 text-center" href="#"><button
                                                                 type="button" class="btn btn-danger ">Delete</button></a>
@@ -65,7 +69,7 @@
                         </div>
                        
                         <div>
-                            {{ $student->links('pagination::bootstrap-5') }}
+                            {{ $student->links() }}
                         </div>
                     </div>
 

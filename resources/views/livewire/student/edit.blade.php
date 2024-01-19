@@ -4,8 +4,8 @@ aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">Form Murid</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" id="exampleModalCenterTitle">Form Update Murid{{$studentid}}</h5>
+            <button wire:click="resettext" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
             <form>
@@ -88,10 +88,9 @@ aria-hidden="true">
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" wire:click="resettext" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             <button type="button" wire:click="resettext" class="btn btn-info">reset</button>
             <button type="button" wire:click="tambah" class="btn btn-primary">Save changes</button>
-           
         </div>
     </div>
 </div>

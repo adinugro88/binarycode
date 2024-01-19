@@ -10,20 +10,25 @@ use Livewire\WithPagination;
 class StudentCrud extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
     public $no = 1;
+    public $studentid;
     public $nonik,$name,$kelas,$sekolah,$alamat,$phone;
-
-
-
+    public $currentPage = 1; // Current page number
+    public $perPage = 10;    // Number of rows per page
     
+
+
     public function resettext()
     {
+
         $this->nonik      = "";
         $this->name       = "";
         $this->kelas      = "";
         $this->sekolah    = "";
         $this->alamat     = "";
         $this->phone      = "";
+    
     }
 
     public function rules()
@@ -39,6 +44,7 @@ class StudentCrud extends Component
 
     public function tambah ()
     {
+       
         $this->validate();
         Student::Create([
             'nonik'     => $this->nonik,
@@ -51,6 +57,22 @@ class StudentCrud extends Component
         session()->flash('message','Berhasil menambahkan murid ');
         $this->resettext();
         $this->dispatch('close-modal');
+    }
+
+    public function edit($id)
+    {
+        
+        $student = Student::find($id);
+        if($student) {
+            $this->studentid    = $student->id;
+            $this->nonik        = $student->nonik;
+            $this->name         = $student->name;
+            $this->kelas        = $student->kelas;
+            $this->sekolah      = $student->sekolah;
+            $this->alamat       = $student->alamat;
+            $this->phone        = $student->phone;
+        }
+       
     }
 
     public function render()
