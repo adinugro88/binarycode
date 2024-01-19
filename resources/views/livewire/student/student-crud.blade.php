@@ -35,9 +35,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($student as $data)
+                                
+                                    @foreach ($student as $key => $data)
                                     <tr>
-                                        <td> {{ $student->count() * ($student->currentPage() - 1) + $loop->iteration }}</td>
+                                        <td> {{$student->firstItem() + $key}}</td>
                                         <td>{{ $data->nonik }}</td>
                                         <td>{{ $data->name }}</td>
                                         <td>{{ $data->kelas }}</td>
