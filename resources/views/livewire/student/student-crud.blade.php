@@ -13,7 +13,7 @@
                     <div class="card-body">
 
                      @if (session()->has('message'))
-                        <h5 class="alert alert-success">{{ session('message') }}</h5>
+                        <h5 class="alert alert-success hideMe">{{ session('message') }}</h5>
                     @endif
                         <h5 class="card-title">Student</h5>
                         <button type="button" class="btn btn-success m-b-xs" data-bs-toggle="modal"
