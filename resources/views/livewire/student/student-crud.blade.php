@@ -1,8 +1,5 @@
 <div>
    
-       
-
-  
     <div class="row">
         @include('livewire.student.tambah')
         @include('livewire.student.edit')
@@ -12,9 +9,12 @@
 
                     <div class="card-body">
 
-                     @if (session()->has('message'))
-                        <h5 class="alert alert-success hideMe">{{ session('message') }}</h5>
-                    @endif
+                     {{-- @if (session()->has('message')) --}}
+                        @if ($notif)
+                            <h5 class="alert alert-info hideMe">{{ session('message') }} Berhasil menambahkan murid <a href="#" class="text-danger" wire:click="closenotif()">X</a></h5>
+                        @endif
+                       
+                    {{-- @endif --}}
                         <h5 class="card-title">Student</h5>
                         <button type="button" class="btn btn-success m-b-xs" data-bs-toggle="modal"
                             data-bs-target="#studentModal">

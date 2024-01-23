@@ -16,6 +16,7 @@ class StudentCrud extends Component
     public $nonik,$name,$kelas,$sekolah,$alamat,$phone;
     public $currentPage = 1; // Current page number
     public $perPage = 10;    // Number of rows per page
+    public $notif = true;
     
 
 
@@ -29,6 +30,11 @@ class StudentCrud extends Component
         $this->alamat     = "";
         $this->phone      = "";
     
+    }
+
+    public function closenotif()
+    {
+        $this->notif = false;
     }
 
     public function rules()
@@ -57,6 +63,7 @@ class StudentCrud extends Component
         session()->flash('message','Berhasil menambahkan murid ');
         $this->resettext();
         $this->dispatch('close-modal');
+        $this->notif = true;
     }
 
     public function edit($id)
