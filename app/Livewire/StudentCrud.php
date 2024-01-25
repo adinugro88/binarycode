@@ -22,14 +22,13 @@ class StudentCrud extends Component
 
     public function resettext()
     {
-
         $this->nonik      = "";
         $this->name       = "";
         $this->kelas      = "";
         $this->sekolah    = "";
         $this->alamat     = "";
         $this->phone      = "";
-    
+        $this->studentid  = "";
     }
 
     public function closenotif()
@@ -79,7 +78,44 @@ class StudentCrud extends Component
             $this->alamat       = $student->alamat;
             $this->phone        = $student->phone;
         }
+             
        
+    }
+
+    public function update()
+    {
+        $this->validate();
+        if($this->studentid) {
+
+            $student = Student::find($this->studentid);
+            
+            if($student) {
+                $student->update([
+                    'nonik'     => $this->nonik,
+                    'name'      => $this->name,
+                    'kelas'     => $this->kelas,
+                    'sekolah'   => $this->sekolah,
+                    'alamat'    => $this->alamat,
+                    'phone'     => $this->phone,
+                ]);
+            }
+        }
+        //flash message
+        session()->flash('message', 'Data Berhasil Diupdate.');
+        $this->resettext();
+        $this->dispatch('close-modal');
+    }
+
+    public function delete()
+    {
+        $student = Student::find($this->studentid);
+        if($student)
+        {
+            $student->delete();
+        }
+        session()->flash('message', 'Data Berhasil dihapus.');
+        $this->resettext();
+        $this->dispatch('close-modal');
     }
 
     public function render()

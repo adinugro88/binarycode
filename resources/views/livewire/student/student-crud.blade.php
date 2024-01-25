@@ -3,18 +3,19 @@
     <div class="row">
         @include('livewire.student.tambah')
         @include('livewire.student.edit')
+        @include('livewire.student.delete')
         <div class="row">
             <div class="col">
                 <div class="card">
 
                     <div class="card-body">
 
-                     {{-- @if (session()->has('message')) --}}
+                     @if (session()->has('message'))
                         @if ($notif)
-                            <h5 class="alert alert-info hideMe">{{ session('message') }} Berhasil menambahkan murid <a href="#" class="text-danger" wire:click="closenotif()">X</a></h5>
+                            <h5 class="alert alert-info">{{ session('message') }} <a href="#" class="text-danger mr-5" wire:click="closenotif()">X</a></h5>
                         @endif
                        
-                    {{-- @endif --}}
+                    @endif
                         <h5 class="card-title">Student</h5>
                         <button type="button" class="btn btn-success m-b-xs" data-bs-toggle="modal"
                             data-bs-target="#studentModal">
@@ -35,7 +36,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                
                                     @foreach ($student as $key => $data)
                                     <tr>
                                         <td> {{$student->firstItem() + $key}}</td>
@@ -56,20 +56,18 @@
                                                     <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
                                                                 type="button" class="btn btn-info mb-2" data-bs-target="#updateStudentModal" data-bs-toggle="modal">Edit</button></a>
                                                     </li>
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button
-                                                                type="button" class="btn btn-danger ">Delete</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
+                                                                type="button" class="btn btn-danger "  data-bs-target="#deleteStudentModal" data-bs-toggle="modal">Delete</button></a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </td>
                                     </tr>
-    
                                     @endforeach
                                 </tbody>
                             </table>
-                        </div>
-                       
-                        <div>
+                 
+                   
                             {{ $student->links() }}
                         </div>
                     </div>

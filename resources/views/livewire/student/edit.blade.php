@@ -1,6 +1,6 @@
 
 <div class="modal fade" id="updateStudentModal" wire:ignore.self tabindex="-1" aria-labelledby="exampleModalLabel"
-aria-hidden="true">
+aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
 <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
         <div class="modal-header">
@@ -89,8 +89,7 @@ aria-hidden="true">
         </div>
         <div class="modal-footer">
             <button type="button" wire:click="resettext" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" wire:click="resettext" class="btn btn-info">reset</button>
-            <button type="button" wire:click="tambah" class="btn btn-primary">Save changes</button>
+            <button type="button" wire:click="update" class="btn btn-primary">Save changes</button>
         </div>
     </div>
 </div>
