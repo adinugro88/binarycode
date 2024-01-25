@@ -3,18 +3,51 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Anda Yakin ingin Menghapus {{$nama}}</h5>
+                <h5 class="modal-title" id="exampleModalCenterTitle">Kategori Detail {{$nama}}</h5>
                 <button wire:click="resettext" type="button" class="btn-close" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>data siswa bernama <b>{{$nama}}</b> dan id  </p>
+                <table class="table" width="30%">
+                    <tr>
+                        <th>Kategori</th>
+                        <td><b>{{$nama}}</b></td>
+                    </tr>
+                    <tr>
+                        <th>Keterangan Detail</th>
+                        <td><b>{{$keterangan}}</b></td>
+                    </tr>
+                </table>
+                <table class="table">
+                    <tr>
+                        <th>no</th>
+                        <th>Point</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    @if (!empty($kategoripoint))
+                        
+                        @foreach ($arraypoint as $data)
+                            <tr>
+                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$data['judul']}}</td>
+                                    <td>{{$data['keterangan']}}</td>
+                            </tr>
+                        @endforeach 
+                  
+                    @endif
+                    @empty($arraypoint)
+
+                       <tr>
+                        <td colspan="2"> There are no data available.</td>
+                     </tr> 
+
+                    @endempty
+                
+                </table>
             </div>
             <div class="modal-footer">
                 <button type="button" wire:click="resettext" class="btn btn-secondary"
                     data-bs-dismiss="modal">Close</button>
-                <button type="button" wire:click="delete" class="btn btn-danger">
-                    Delete Permanent</button>
             </div>
         </div>
     </div>

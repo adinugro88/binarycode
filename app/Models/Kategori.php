@@ -12,10 +12,10 @@ class Kategori extends Model
     protected $guarded = [];
 
     
-    public function Student()
-    {
-        return $this->belongsTo(Student::class,);
-    }
+    // public function Student()
+    // {
+    //     return $this->belongsTo(Student::class,);
+    // }
 
  
     public function Katgoripoint()
