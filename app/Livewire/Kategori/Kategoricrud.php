@@ -37,6 +37,21 @@ class Kategoricrud extends Component
         $this->keterpoint   ="";
     }
 
+    public function rules()
+    {
+        return[
+            'nama'          => 'required',
+            'keterangan'    => 'required',
+            'judul'         => 'required',
+            'keterpoint'    => 'requierd'
+        ];
+    }
+
+    public function tambah()
+    {
+        
+    }
+
     public function render()
     {
 
