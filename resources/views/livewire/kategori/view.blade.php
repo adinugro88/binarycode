@@ -38,7 +38,7 @@
                     @empty($arraypoint)
 
                        <tr>
-                        <td colspan="3"> There are no data available.</td>
+                        <td colspan="3"><b> Data Point Belum ada </b></td>
                      </tr> 
 
                     @endempty

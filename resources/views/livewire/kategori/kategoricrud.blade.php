@@ -2,7 +2,8 @@
    
     <div class="row">
         @include('livewire.kategori.view')
-        {{-- @include('livewire.student.tambah')
+        @include('livewire.student.tambah')
+        {{--
         @include('livewire.student.edit')
         @include('livewire.student.delete') --}}
         <div class="row">
@@ -15,10 +16,10 @@
                         @endif
                        
                     @endif
-                        <h5 class="card-title">Student</h5>
+                        <h5 class="card-title">Kategori</h5>
                         <button type="button" class="btn btn-success m-b-xs" data-bs-toggle="modal"
                             data-bs-target="#studentModal">
-                            tambah murid
+                            tambah Kategori
                         </button>
                         <div class="table-responsive" style="min-height: 400px;">
                             <table class="table" >
