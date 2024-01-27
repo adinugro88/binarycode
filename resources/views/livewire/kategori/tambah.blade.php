@@ -11,9 +11,9 @@ aria-hidden="true"  data-bs-keyboard="false" data-bs-backdrop="static">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">NoId</label>
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Kategori</label>
                             <div class="col-sm-10">
-                                <input type="text" wire:model.defer='nonik' class="form-control @error('nonik') is-invalid @enderror">
+                                <input type="text" wire:model.defer='kategori' class="form-control @error('kategori') is-invalid @enderror">
                                 @error('nonik')
                                     <span class="invalid-feedback">
                                             {{ $message }}
@@ -24,9 +24,9 @@ aria-hidden="true"  data-bs-keyboard="false" data-bs-backdrop="static">
                     </div>
                     <div class="col-md-12">
                         <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Nama</label>
+                            <label for="inputEmail3" class="col-sm-2 col-form-label">Keterangan</label>
                             <div class="col-sm-10">
-                                <input type="text" wire:model.defer='name' class="form-control @error('name') is-invalid @enderror">
+                                <textarea type="text" cols="10" rows="5" wire:model.defer='name' class="form-control @error('name') is-invalid @enderror"></textarea>
                                 @error('name')
                                 <span class="invalid-feedback">
                                         {{ $message }}
@@ -45,41 +45,6 @@ aria-hidden="true"  data-bs-keyboard="false" data-bs-backdrop="static">
                                         {{ $message }}
                                 </span>
                                   @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mt-2">
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Sekolah</label>
-                            <div class="col-sm-10">
-                                <input type="text" wire:model.defer='sekolah' class="form-control @error('sekolah') is-invalid @enderror">
-                                @error('sekolah')
-                                <span class="invalid-feedback">
-                                        {{ $message }}
-                                </span>
-                                  @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mt-2">
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Phone</label>
-                            <div class="col-sm-10">
-                                <input type="text" wire:model.defer='phone' class="form-control @error('phone') is-invalid @enderror">
-                                @error('phone')
-                                <span class="invalid-feedback">
-                                        {{ $message }}
-                                </span>
-                                  @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 mt-2">
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Alamat</label>
-                            <div class="col-sm-10">
-                                <textarea class="form-control" wire:model.defer='alamat' name="" id="" cols="10"
-                                    rows="5"></textarea>
                             </div>
                         </div>
                     </div>
