@@ -17,6 +17,34 @@ class Kategoricrud extends Component
     public $perPage = 10;    // Number of rows per page
     public $notif = true;
     public $kategoripoint,$arraypoint,$pointout;
+    public $nilai = 0;
+    public $scoreloop=[];
+
+    public function mount()
+    {
+         $this->scoreloop = [
+            ['point'=>'','keterangan'=>'']
+         ];
+    }
+
+    public function addpoint()
+    {
+        $this->nilai +=1; 
+        $this->scoreloop[] =['point'=>'','keterangan'=>''];
+    }
+
+
+
+    public function minpoint($index)
+    {
+        if($this->nilai!=0)
+        {
+            $this->nilai -=1; 
+            unset($this->scoreloop[$index]);
+            array_values($this->scoreloop);
+        }
+        
+    }
 
     public function select($id)
     {
@@ -31,9 +59,11 @@ class Kategoricrud extends Component
 
     public function resettext()
     {
+        $this->scoreloop = [['point'=>'','keterangan'=>'']];
         $this->nama         ="";
         $this->keterangan   ="";
         $this->judul        ="";
+        $this->nilai        =0;
         $this->keterpoint   ="";
     }
 
