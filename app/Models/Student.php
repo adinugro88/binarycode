@@ -20,6 +20,6 @@ class Student extends Model
    
     public function Card()
     {
-        return $this->hasMany(Card::class,);
+        return $this->HasOne(Card::class,'student_id');
     }
 }

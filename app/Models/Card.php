@@ -14,13 +14,18 @@ class Card extends Model
 
     public function Student()
     {
-        return $this->belongsTo(Student::class,);
+        return $this->belongsTo(Student::class,'student_id');
+    }
+
+    public function Kategori()
+    {
+        return $this->belongsTo(Kategori::class,);
     }
 
   
     public function Cdpoint()
     {
-        return $this->hasMany(Cdpoint::class,);
+        return $this->hasMany(App\Cdpoint::class,);
     }
 
 }

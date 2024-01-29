@@ -10,7 +10,7 @@
             Apps
         </li>
         <li>
-            <a href="/admin/sertifikat"><i data-feather="user"></i>Sertifikat</a>
+            <a href="/admin/sertifikat"><i data-feather="cast"></i>Sertifikat</a>
         </li>
       
         <li class="sidebar-title">
