@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Kategori;
 use App\Models\KategoriPoint;
 use Livewire\WithPagination;
+use Validator;
 
 class Kategoricrud extends Component
 {
@@ -23,16 +24,16 @@ class Kategoricrud extends Component
     public function mount()
     {
          $this->scoreloop = [
-            ['point'=>'','keterangan'=>'']
+            ['point'=>'']
          ];
+         //dd($this->scoreloop);
     }
 
     public function addpoint()
     {
         $this->nilai +=1; 
-        $this->scoreloop[] =['point'=>'','keterangan'=>''];
+        $this->scoreloop[] =['point'=>''];
     }
-
 
 
     public function minpoint($index)
@@ -43,7 +44,6 @@ class Kategoricrud extends Component
             unset($this->scoreloop[$index]);
             array_values($this->scoreloop);
         }
-        
     }
 
     public function select($id)
@@ -59,7 +59,7 @@ class Kategoricrud extends Component
 
     public function resettext()
     {
-        $this->scoreloop = [['point'=>'','keterangan'=>'']];
+        $this->scoreloop = [['point'=>'']];
         $this->nama         ="";
         $this->keterangan   ="";
         $this->judul        ="";
@@ -67,19 +67,36 @@ class Kategoricrud extends Component
         $this->keterpoint   ="";
     }
 
-    public function rules()
+    protected function rules()
     {
-        return[
-            'nama'          => 'required',
-            'keterangan'    => 'required',
-            'judul'         => 'required',
-            'keterpoint'    => 'requierd'
+        return [
+            'nama'                   => 'required',
+            'keterangan'             => 'required',
+            'scoreloop'              => 'required|array|min:1',
+            'scoreloop.*.point'      => 'required'
         ];
     }
 
     public function tambah()
     {
-        
+   
+         
+        $this->validate();
+        $kategori = Kategori::Create([
+            'nama'          => $this->nama,
+            'keterangan'    => $this->keterangan,
+        ]);
+
+        foreach ($this->scoreloop as $key => $value) {
+            KategoriPoint::create([
+                'judul'         => $this->scoreloop[$key]['point'],
+                'kategori_id'   => $kategori->id,
+            ]);
+        }
+        session()->flash('message','Berhasil menambahkan Kategori ');
+        $this->resettext();
+        $this->dispatch('close-modal');
+
     }
 
     public function render()

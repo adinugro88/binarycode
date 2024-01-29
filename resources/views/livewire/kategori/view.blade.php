@@ -22,15 +22,12 @@
                     <tr>
                         <th>no</th>
                         <th>Point</th>
-                        <th>Keterangan</th>
                     </tr>
                     @if (!empty($kategoripoint))
-                        
                         @foreach ($arraypoint as $data)
                             <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$data['judul']}}</td>
-                                    <td>{{$data['keterangan']}}</td>
                             </tr>
                         @endforeach 
                   
