@@ -46,7 +46,6 @@
                                     <div class="row mb-3">
                                         <label for="inputEmail3" class="col-sm-10 col-form-label ">Point
                                             Kategori</label>
-
                                         <label for="inputEmail3" class="col-sm-2 col-form-label text-center"> Hapus
                                         </label>
                                     </div>
@@ -71,8 +70,6 @@
                                         @else
                                         <div class="btn btn-secondary col-sm-2" style="height:40px">Delete</div>
                                         @endif
-
-
                                     </div>
                                 </div>
 

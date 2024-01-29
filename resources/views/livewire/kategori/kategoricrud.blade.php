@@ -6,7 +6,7 @@
        
         @include('livewire.kategori.edit')
 
-        {{-- @include('livewire.student.delete') --}}
+        @include('livewire.kategori.delete')
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -52,8 +52,8 @@
                                                     <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="select({{$data->id}})"
                                                                 type="button" class="btn btn-info mb-2" data-bs-target="#updatekategoriModal" data-bs-toggle="modal">Edit</button></a>
                                                     </li>
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
-                                                                type="button" class="btn btn-danger "  data-bs-target="#deleteStudentModal" data-bs-toggle="modal">Delete</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="select({{$data->id}})"
+                                                                type="button" class="btn btn-danger "  data-bs-target="#deletekategoriModal" data-bs-toggle="modal">Delete</button></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -62,8 +62,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                 
-                   
                             {{ $kategori->links() }}
                         </div>
                     </div>

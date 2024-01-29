@@ -146,6 +146,21 @@ class Kategoricrud extends Component
 
     }
 
+
+    public function hapus()
+    {
+        $kategori = Kategori::find($this->kategoriid);
+        if($kategori) 
+        {
+            $kategori->delete();
+            $kategoripoint = KategoriPoint::where('kategori_id', $this->kategoriid)->delete(); 
+        }
+        $this->notif = true;
+        session()->flash('message', 'Data Berhasil dihapus.');
+        $this->resettext();
+        $this->dispatch('close-modal');
+    }
+
     public function render()
     {
 
