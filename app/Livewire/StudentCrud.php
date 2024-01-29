@@ -104,6 +104,7 @@ class StudentCrud extends Component
         session()->flash('message', 'Data Berhasil Diupdate.');
         $this->resettext();
         $this->dispatch('close-modal');
+        $this->notif = true;
     }
 
     public function delete()
@@ -113,9 +114,11 @@ class StudentCrud extends Component
         {
             $student->delete();
         }
+        $this->notif = true;
         session()->flash('message', 'Data Berhasil dihapus.');
         $this->resettext();
         $this->dispatch('close-modal');
+       
     }
 
     public function render()

@@ -3,9 +3,10 @@
     <div class="row">
         @include('livewire.kategori.view')
         @include('livewire.kategori.tambah')
-        {{--
-        @include('livewire.student.edit')
-        @include('livewire.student.delete') --}}
+       
+        @include('livewire.kategori.edit')
+
+        {{-- @include('livewire.student.delete') --}}
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -48,8 +49,8 @@
                                                     <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="select({{$data->id}})"
                                                         type="button" class="btn btn-primary mb-2" data-bs-target="#kategoriviewModal" data-bs-toggle="modal">View</button></a>
                                                     </li>
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
-                                                                type="button" class="btn btn-info mb-2" data-bs-target="#updateStudentModal" data-bs-toggle="modal">Edit</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="select({{$data->id}})"
+                                                                type="button" class="btn btn-info mb-2" data-bs-target="#updatekategoriModal" data-bs-toggle="modal">Edit</button></a>
                                                     </li>
                                                     <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
                                                                 type="button" class="btn btn-danger "  data-bs-target="#deleteStudentModal" data-bs-toggle="modal">Delete</button></a>
