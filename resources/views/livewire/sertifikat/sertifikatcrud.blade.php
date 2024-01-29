@@ -33,7 +33,7 @@
                                     <tr>
                                         <td> {{$card->firstItem() + $key}}</td>
                                         <td>{{ $data->tanggal }}</td>
-                                        <td>{{ $data->class }}</td>
+                                        <td>{{ $data->Kategori->nama }}</td>
                                         <td>{{ $data->Student->name }}</td>
                                         <td>
                                             <div class="btn-group" role="group">

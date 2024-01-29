@@ -39,14 +39,14 @@
                             </div>
                         </div>
                         <fieldset class="border rounded-3 p-3">
-                            <legend class="float-none w-auto px-3"><b>Point Kategori</b></legend>
+                            <legend class="float-none w-auto px-3"><b>Subject And Score </b></legend>
                             <div class="row">
                                 {{-- <h4>{{$nilai}}</h4> --}}
                                 <div class="col-md-12 mt-2">
                                     <div class="row mb-3">
-                                        <label for="inputEmail3" class="col-sm-10 col-form-label ">Point
+                                        <label for="inputEmail3" class="col-sm-6 col-form-label ">Point
                                             Kategori</label>
-                                        <label for="inputEmail3" class="col-sm-2 col-form-label text-center"> Hapus
+                                        <label for="inputEmail3" class="col-sm-6 col-form-label text-center"> Hapus
                                         </label>
                                     </div>
                                 </div>
