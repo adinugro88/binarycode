@@ -80,7 +80,7 @@ class CreateSertifikat extends Component
                 'cards_id'  => $card->id
             ]);
         }
-        session()->flash('message', 'Sertifikat successfully added.');
+        session()->flash('message', 'Sertifikat berhasil ditambahkan.');
         $this->redirect('/admin/sertifikat'); 
     }
 

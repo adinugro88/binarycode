@@ -44,7 +44,8 @@
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-md-2">STUDENT ID</label>
-                                <input wire:model='kategoriup' disabled class="form-control col-10" type="text" value="{{$studentfix->nonik}}">
+                                <input wire:model='kategoriup' disabled class="form-control col-10" type="text"
+                                    value="{{$studentfix->nonik}}">
                             </div>
                         </div>
                         <div class="mb-3">
@@ -100,13 +101,14 @@
                         </div>
 
                         <div class="mb-3">
-                          <div class="row">
-                            <label class="form-label col-2">NOTES</label>
-                            <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15" rows="5"></textarea>
+                            <div class="row">
+                                <label class="form-label col-2">NOTES</label>
+                                <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15"
+                                    rows="5"></textarea>
+                            </div>
+                            <button wire:click='simpan' type="submit" class="btn btn-primary mt-4">Simpan Data</button>
                         </div>
-                        <button wire:click='simpan' type="submit" class="btn btn-primary mt-4">Simpan Data</button>
                     </div>
                 </div>
+                @endif
             </div>
-            @endif
-        </div>

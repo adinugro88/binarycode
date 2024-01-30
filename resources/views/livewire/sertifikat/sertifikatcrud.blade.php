@@ -1,6 +1,10 @@
 <div>
    
     <div class="row">
+     
+        @include('livewire.sertifikat.delete')
+  
+       
         <div class="row">
             <div class="col">
                 <div class="card">
@@ -25,6 +29,7 @@
                                         <th scope="col">Tanggal</th>
                                         <th scope="col">Kelas</th>
                                         <th scope="col">Student</th>
+                                        <th scope="col text-center">Download</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -32,9 +37,10 @@
                                     @foreach ($card as $key => $data)
                                     <tr>
                                         <td> {{$card->firstItem() + $key}}</td>
-                                        <td>{{ $data->tanggal }}</td>
+                                        <td>{{ Carbon\Carbon::parse($data->tanggal)->format('F Y')  }}</td>
                                         <td>{{ $data->Kategori->nama }}</td>
                                         <td>{{ $data->Student->name }}</td>
+                                        <td> <a class="btn btn-warning" href="/admin/viewsertifikat/{{ $data->id }}">prev and download</a> </td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <button id="btnGroupDrop1" type="button"
@@ -43,11 +49,11 @@
                                                     Action
                                                 </button>
                                                 <ul class="dropdown-menu py-3" aria-labelledby="btnGroupDrop1">
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
-                                                                type="button" class="btn btn-info mb-2" data-bs-target="#updateStudentModal" data-bs-toggle="modal">Edit</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="/admin/editsertifikat/{{$data->id}}"><button 
+                                                                type="button" class="btn btn-info mb-2" >Edit</button></a>
                                                     </li>
-                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="edit({{$data->id}})"
-                                                                type="button" class="btn btn-danger "  data-bs-target="#deleteStudentModal" data-bs-toggle="modal">Delete</button></a>
+                                                    <li><a class="dropdown-item p-0 text-center" href="#"><button wire:click="select({{$data->id}})"
+                                                                type="button" class="btn btn-danger "  data-bs-target="#deletesertifikatModal" data-bs-toggle="modal">Delete</button></a>
                                                     </li>
                                                 </ul>
                                             </div>

@@ -10,7 +10,7 @@
 @section('script')
 <script>
     window.addEventListener('close-modal', event => {
-        $('#deletekategoriModal').modal('hide');
+        $('#deletesertifikatModal').modal('hide');
     })
 </script>
 @endsection

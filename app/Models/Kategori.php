@@ -17,9 +17,14 @@ class Kategori extends Model
     //     return $this->belongsTo(Student::class,);
     // }
 
+    public function Card()
+    {
+        return $this->HasOne(Card::class,'kategori_id','id');
+    }
+
  
     public function Katgoripoint()
     {
-        return $this->hasMany(Kategori::class,);
+        return $this->hasMany(Kategori::class,'kategori_id');
     }
 }

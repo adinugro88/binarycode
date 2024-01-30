@@ -19,7 +19,7 @@ class Card extends Model
 
     public function Kategori()
     {
-        return $this->belongsTo(Kategori::class,);
+        return $this->belongsTo(Kategori::class,'kategori_id','id');
     }
 
   

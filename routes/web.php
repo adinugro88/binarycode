@@ -28,4 +28,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/kategori', [App\Http\Controllers\KategoriController::class, 'index'])->name('kategori');
     Route::get('/sertifikat', [App\Http\Controllers\SertifikatController::class, 'index'])->name('sertifikat');
     Route::get('/createsertifikat', [App\Http\Controllers\SertifikatController::class, 'create'])->name('createsertifikat');
+    Route::get('/editsertifikat/{id}', [App\Http\Controllers\SertifikatController::class, 'edit'])->name('editsertifikat');
+    Route::get('/viewsertifikat/{id}', [App\Http\Controllers\SertifikatController::class, 'view'])->name('viewsertifikat');
 });

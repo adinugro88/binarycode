@@ -20,6 +20,19 @@ class SertifikatController extends Controller
         return view("pages.sertifikat");
     }
 
+
+    public function edit(string $id)
+    {
+         $dataid = $id;
+        return view("pages.editsertifikat",compact('dataid'));
+    }
+
+    public function view(string $id)
+    {
+         $dataid = $id;
+        return view("pages.viewsertifikat",compact('dataid'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -47,10 +60,7 @@ class SertifikatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
-    }
+    
 
     /**
      * Update the specified resource in storage.
