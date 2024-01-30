@@ -4,7 +4,7 @@ namespace App\Livewire\Kategori;
 
 use Livewire\Component;
 use App\Models\Kategori;
-use App\Models\KategoriPoint;
+use App\Models\Kategoripoint;
 use Livewire\WithPagination;
 use Validator;
 
@@ -57,7 +57,7 @@ class Kategoricrud extends Component
         $this->kategoriid        = $id;
         $this->nama              = $kategoripilih->nama;
         $this->keterangan        = $kategoripilih->keterangan;
-        $this->kategoripoint     = KategoriPoint::where('kategori_id',$id)->get();
+        $this->kategoripoint     = Kategoripoint::where('kategori_id',$id)->get();
         // dd($this->kategoripoint);
         $this->arraypoint        =  json_decode(json_encode($this->kategoripoint),TRUE);
         //dd($this->arraypoint);
