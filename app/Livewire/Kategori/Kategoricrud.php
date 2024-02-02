@@ -152,10 +152,10 @@ class Kategoricrud extends Component
     {
    
 
-        $cek = Card::where('kategori_id',$this->studentid)->get();
-        // dd($cek);
+        $cek = Card::where('kategori_id',$this->kategoriid)->first();
+        // dd(isset($cek) );
 
-        if($cek)
+        if(isset($cek))
         {
             $this->notif = true;
             session()->flash('message', 'Data tidak dihapus karena telah koneksi ke data lain.');

@@ -111,10 +111,10 @@ class StudentCrud extends Component
     public function delete()
     {
        
-        $cek = Card::where('student_id',$this->studentid)->get();
+        $cek = Card::where('student_id',$this->studentid)->first();
         // dd($cek);
 
-        if($cek)
+        if(isset($cek))
         {
             $this->notif = true;
             session()->flash('message', 'Data tidak dihapus karena telah koneksi ke data lain.');
