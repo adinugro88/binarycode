@@ -41,6 +41,9 @@
                                 <input disabled class="form-control col-10" type="text" value="{{$studentfix->name}}">
                             </div>
                         </div>
+
+                        @if ($kategorifix->id==3)   
+                        @else
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-md-2">STUDENT ID</label>
@@ -48,6 +51,9 @@
                                     value="{{$studentfix->nonik}}">
                             </div>
                         </div>
+                        @endif
+                   
+
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-2">CLASS</label>
@@ -76,9 +82,6 @@
                                         <label for="inputEmail3" class="col-sm-6 col-form-label ">Point Kategori</label>
                                         <label for="inputEmail3" class="col-sm-6 col-form-label text-center"> Score</label>
                                         @endif
-
-                                        
-
                                     </div>
                                 </div>
                                 <hr>

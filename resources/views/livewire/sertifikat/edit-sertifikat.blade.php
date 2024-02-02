@@ -37,20 +37,58 @@
                         <div class="row">
                             <div class="col-md-12 mt-2">
                                 <div class="row mb-3">
-                                    <label for="inputEmail3" class="col-sm-6 col-form-label ">Point
-                                        Kategori</label>
-                                    <label for="inputEmail3" class="col-sm-6 col-form-label text-center"> Score
-                                    </label>
+                                    @if ($kategorid==3)
+                                        <label for="inputEmail3" class="col-sm-4 col-form-label ">Point Kategori</label>
+                                        <label for="inputEmail3" class="col-sm-4 col-form-label text-center"> Score</label>
+                                        <label for="inputEmail3" class="col-sm-4 col-form-label text-center"> Detail</label>
+                                        @else
+                                        <label for="inputEmail3" class="col-sm-6 col-form-label ">Point Kategori</label>
+                                        <label for="inputEmail3" class="col-sm-6 col-form-label text-center"> Score</label>
+                                        @endif
                                 </div>
                             </div>
                             <hr>
+                         
+
+                            @if ($kategorid==3)
+                            @foreach ($cardpoint as $key => $item)
+                            <div class="col-md-12 mt-2">
+                                <div class="row mb-3">
+                                    <div class="col-sm-4">
+                                        <input disabled type="text" class="form-control"
+                                            wire:model.defer="cardpoint.{{ $key }}.point">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text"
+                                            class="form-control @error('cardpoint.'.$key.'.score') is-invalid @enderror"
+                                            wire:model.defer="cardpoint.{{ $key }}.score">
+                                        @error('cardpoint.'.$key.'.score')
+                                        <span class="invalid-feedback">
+                                            score diatas wajib diisi
+                                        </span>
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text"
+                                            class="form-control @error('cardpoint.'.$key.'.detail') is-invalid @enderror"
+                                            wire:model.defer="cardpoint.{{ $key }}.detail">
+                                        @error('cardpoint.'.$key.'.detail')
+                                        <span class="invalid-feedback">
+                                            detail diatas wajib diisi
+                                        </span>
+                                        @enderror
+                                    </div>
+
+                                </div>
+                            </div>
+                            @endforeach
+                        @else
                             @foreach ($cardpoint as $key => $item)
                             <div class="col-md-12 mt-2">
                                 <div class="row mb-3">
                                     <div class="col-sm-6">
                                         <input disabled type="text" class="form-control"
                                             wire:model.defer="cardpoint.{{ $key }}.point">
-
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="text"
@@ -62,10 +100,10 @@
                                         </span>
                                         @enderror
                                     </div>
-
                                 </div>
                             </div>
                             @endforeach
+                        @endif
                         </div>
                     </div>
 

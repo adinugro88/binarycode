@@ -38,27 +38,58 @@ class EditSertifikat extends Component
         $point = Cdpoint::where('cards_id',$this->card->id)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
         
-        //  dd($arraypoint);
-        foreach($point as $data){
-            $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score']];
+        // dd($arraypoint);
+
+        if($this->kategorid == 3)
+        {
+            foreach($point as $data){
+                $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score'],'detail'=>$data['detail']];
+            }
         }
+        else 
+        {
+            foreach($point as $data){
+                $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score']];
+            }
+        }
+        
     }
 
     public function update()
     {
        
-        if($this->id) {
-
-            $card = Card::find($this->id);
-            
-            if($card) {
+        if($this->id && $this->kategorid == 3) 
+        { 
+                $card = Card::find($this->id);
                 $card->update([
                     'tanggal'           => $this->tanggal,
                     'Note'              => $this->note,
                     'student_id'        => $this->studentid,
                     'kategori_id'       => $this->kategorid,
                 ]);
-            }
+                
+
+                $kategoripoint = Cdpoint::where('cards_id', $this->id)->delete();
+                foreach ($this->cardpoint as $key => $value) {
+                    Cdpoint::create([
+                        'score'     => $this->cardpoint[$key]['score'],
+                        'point'     => $this->cardpoint[$key]['point'],
+                        'detail'    => $this->cardpoint[$key]['detail'],
+                        'cards_id'  => $card->id
+                    ]);
+                }
+        }
+        else 
+        {
+            
+            $card = Card::find($this->id);
+          
+            $card->update([
+                'tanggal'           => $this->tanggal,
+                'Note'              => $this->note,
+                'student_id'        => $this->studentid,
+                'kategori_id'       => $this->kategorid,
+            ]);
 
             $kategoripoint = Cdpoint::where('cards_id', $this->id)->delete();
             foreach ($this->cardpoint as $key => $value) {
@@ -69,6 +100,7 @@ class EditSertifikat extends Component
                 ]);
             }
         }
+        
         session()->flash('message', 'Sertifikat berhasil Update.');
         $this->redirect('/admin/sertifikat'); 
     }

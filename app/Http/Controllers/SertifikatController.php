@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Card;
+use App\Models\Cdpoint;
+
 
 class SertifikatController extends Controller
 {
@@ -31,6 +34,14 @@ class SertifikatController extends Controller
     {
          $dataid = $id;
         return view("pages.viewsertifikat",compact('dataid'));
+    }
+
+    public function trialcard(string $id)
+    {
+        $dataid = $id;
+        $card = Card::find($id);
+        $cardpoint = Cdpoint::where('cards_id',$id)->get();
+        return view("pages.trialcard",compact('card','cardpoint'));
     }
 
     /**

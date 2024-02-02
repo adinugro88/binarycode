@@ -54,9 +54,6 @@ class CreateSertifikat extends Component
                 $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
             }
         }
-        
-       
-        
     }
 
     public function resetall()
@@ -103,14 +100,28 @@ class CreateSertifikat extends Component
             'student_id'        => $this->studentid,
             'kategori_id'       => $this->kategorid,
         ]);
-
-        foreach ($this->cardpoint as $key => $value) {
-            Cdpoint::create([
-                'score'     => $this->cardpoint[$key]['score'],
-                'point'     => $this->cardpoint[$key]['point'],
-                'cards_id'  => $card->id
-            ]);
+        if($this->kategorifix->id == 3)
+        {
+            foreach ($this->cardpoint as $key => $value) {
+                Cdpoint::create([
+                    'score'     => $this->cardpoint[$key]['score'],
+                    'point'     => $this->cardpoint[$key]['point'],
+                    'detail'    => $this->cardpoint[$key]['detail'],
+                    'cards_id'  => $card->id
+                ]);
+            }
         }
+        else 
+        {
+            foreach ($this->cardpoint as $key => $value) {
+                Cdpoint::create([
+                    'score'     => $this->cardpoint[$key]['score'],
+                    'point'     => $this->cardpoint[$key]['point'],
+                    'cards_id'  => $card->id
+                ]);
+            }
+        }
+        
         session()->flash('message', 'Sertifikat berhasil ditambahkan.');
         $this->redirect('/admin/sertifikat'); 
     }

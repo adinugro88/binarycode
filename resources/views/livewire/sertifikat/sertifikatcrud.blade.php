@@ -40,7 +40,12 @@
                                         <td>{{ Carbon\Carbon::parse($data->tanggal)->format('F Y')  }}</td>
                                         <td>{{ $data->Kategori->nama }}</td>
                                         <td>{{ $data->Student->name }}</td>
+                                        @if ($data->Kategori->id == 3)
+                                            <td> <a class="btn btn-warning" href="/admin/viewtrialcard/{{ $data->id }}">prev and download</a> </td>
+                                        @else
                                         <td> <a class="btn btn-warning" href="/admin/viewsertifikat/{{ $data->id }}">prev and download</a> </td>
+                                        @endif
+                                        
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <button id="btnGroupDrop1" type="button"
