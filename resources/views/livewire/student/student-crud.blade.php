@@ -39,7 +39,7 @@
                                     @foreach ($student as $key => $data)
                                     <tr>
                                         <td> {{$student->firstItem() + $key}}</td>
-                                        <td>{{ $data->nonik }}</td>
+                                        <td> @if ($data->nonik == 0) Nonik Belum ada @else {{ $data->nonik }} @endif </td>
                                         <td>{{ $data->name }}</td>
                                         <td>{{ $data->kelas }}</td>
                                         <td>{{ $data->sekolah }}</td>

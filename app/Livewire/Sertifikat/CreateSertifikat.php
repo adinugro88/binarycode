@@ -34,6 +34,7 @@ class CreateSertifikat extends Component
 
     public function setting()
     {
+        $this->cardpoint = [];
         $this->formsetup = true;
         $this->studentfix = Student::find($this->studentid);
         $this->kategorifix = Kategori::find($this->kategorid);

@@ -50,8 +50,13 @@ class StudentCrud extends Component
 
     public function tambah ()
     {
+        if($this->nonik=='')
+        {
+            $this->nonik = 0;
+        }
        
         $this->validate();
+
         Student::Create([
             'nonik'     => $this->nonik,
             'name'      => $this->name,
