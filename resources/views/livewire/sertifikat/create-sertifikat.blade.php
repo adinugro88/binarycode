@@ -72,7 +72,6 @@
                                         <label for="inputEmail3" class="col-sm-4 col-form-label ">Point Kategori</label>
                                         <label for="inputEmail3" class="col-sm-4 col-form-label text-center"> Score</label>
                                         <label for="inputEmail3" class="col-sm-4 col-form-label text-center"> Detail</label>
-                                            
                                         @else
                                         <label for="inputEmail3" class="col-sm-6 col-form-label ">Point Kategori</label>
                                         <label for="inputEmail3" class="col-sm-6 col-form-label text-center"> Score</label>
@@ -98,7 +97,7 @@
                                                     wire:model.defer="cardpoint.{{ $key }}.score">
                                                 @error('cardpoint.'.$key.'.score')
                                                 <span class="invalid-feedback">
-                                                    {{ $message }}
+                                                    score diatas wajib diisi
                                                 </span>
                                                 @enderror
                                             </div>
@@ -108,7 +107,7 @@
                                                     wire:model.defer="cardpoint.{{ $key }}.detail">
                                                 @error('cardpoint.'.$key.'.detail')
                                                 <span class="invalid-feedback">
-                                                    {{ $message }}
+                                                    detail diatas wajib diisi
                                                 </span>
                                                 @enderror
                                             </div>
@@ -131,7 +130,7 @@
                                                     wire:model.defer="cardpoint.{{ $key }}.score">
                                                 @error('cardpoint.'.$key.'.score')
                                                 <span class="invalid-feedback">
-                                                    {{ $message }}
+                                                    score diatas wajib diisi
                                                 </span>
                                                 @enderror
                                             </div>

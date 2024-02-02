@@ -34,6 +34,7 @@ class CreateSertifikat extends Component
 
     public function setting()
     {
+        $this->resetErrorBag();
         $this->cardpoint = [];
         $this->formsetup = true;
         $this->studentfix = Student::find($this->studentid);
@@ -63,17 +64,34 @@ class CreateSertifikat extends Component
         $this->formsetup = false;
         $this->studentfix = '';
         $this->kategorifix = '';
-       
+        $this->resetErrorBag();
     }
 
     protected function rules()
     {
-        return [
-            'tanggal'                => 'required',
-            'note'                   => 'required',
-            'cardpoint'              => 'required|array|min:1',
-            'cardpoint.*.score'      => 'required|numeric'
-        ];
+        if($this->kategorifix->id == 3)
+        {
+            return [
+                'tanggal'                => 'required',
+                'note'                   => 'required',
+                'cardpoint'              => 'required|array|min:1',
+                'cardpoint.*.score'      => 'required|numeric',
+                'cardpoint.*.detail'      => 'required'
+            ];
+        }
+
+        else
+        {
+            return [
+                'tanggal'                => 'required',
+                'note'                   => 'required',
+                'cardpoint'              => 'required|array|min:1',
+                'cardpoint.*.score'      => 'required|numeric'
+            ];
+        }
+
+
+        
     }
 
     public function simpan()

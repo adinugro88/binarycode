@@ -14,7 +14,6 @@
                         @if ($notif)
                             <h5 class="alert alert-info">{{ session('message') }} <a href="#" class="text-danger mr-5" wire:click="closenotif()">X</a></h5>
                         @endif
-                       
                     @endif
                         <h5 class="card-title">Student</h5>
                         <button type="button" class="btn btn-success m-b-xs" data-bs-toggle="modal"
