@@ -40,10 +40,20 @@ class CreateSertifikat extends Component
         $this->kategorifix = Kategori::find($this->kategorid);
         $point = Kategoripoint::where('kategori_id',$this->kategorid)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
-        // dd($arraypoint);
-        foreach($point as $data){
-            $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
+        //dd($this->kategorifix->id);
+        if($this->kategorifix->id == 3)
+        {
+            foreach($point as $data){
+                $this->cardpoint[] =['point'=>$data['judul'],'score'=>'','detail'=>''];
+            }
         }
+        else 
+        {
+            foreach($point as $data){
+                $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
+            }
+        }
+        
        
         
     }
