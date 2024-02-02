@@ -95,8 +95,6 @@ class Kategoricrud extends Component
 
     public function tambah()
     {
-   
-         
         $this->validate();
         $kategori = Kategori::Create([
             'nama'          => $this->nama,

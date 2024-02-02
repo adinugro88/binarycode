@@ -34,7 +34,8 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Input Sertifikat</h5>
+                        
+                        <h5 class="card-title">Input Sertifikat <span class="alert alert-info"> {{$kategorifix->nama}}</span></h5>
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-md-2">STUDENT NAME</label>

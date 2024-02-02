@@ -18,6 +18,7 @@ class CreateSertifikat extends Component
     public $studentfix,$kategorifix;
     public $cardpoint = [];
     public $tanggal,$note;
+    public $notif = false;
     
     public function mount()
     {
@@ -27,10 +28,9 @@ class CreateSertifikat extends Component
         $this->studentid = $studentpilih->id;
         $kategoripilih = Kategori::first();
         $this->kategorid = $kategoripilih->id;
-
         // dd( $this->studentid,$this->kategorid);
-        
     }
+
 
     public function setting()
     {
@@ -44,6 +44,7 @@ class CreateSertifikat extends Component
         foreach($point as $data){
             $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
         }
+       
         
     }
 
@@ -52,6 +53,7 @@ class CreateSertifikat extends Component
         $this->formsetup = false;
         $this->studentfix = '';
         $this->kategorifix = '';
+       
     }
 
     protected function rules()
