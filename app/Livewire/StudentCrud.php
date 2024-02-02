@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Student;
 use Livewire\WithPagination;
+use App\Models\Card;
 
 
 class StudentCrud extends Component
@@ -109,15 +110,32 @@ class StudentCrud extends Component
 
     public function delete()
     {
-        $student = Student::find($this->studentid);
-        if($student)
+       
+        $cek = Card::where('student_id',$this->studentid)->get();
+        // dd($cek);
+
+        if($cek)
         {
-            $student->delete();
+            $this->notif = true;
+            session()->flash('message', 'Data tidak dihapus karena telah koneksi ke data lain.');
+            $this->resettext();
+            $this->dispatch('close-modal');
         }
-        $this->notif = true;
-        session()->flash('message', 'Data Berhasil dihapus.');
-        $this->resettext();
-        $this->dispatch('close-modal');
+        else 
+        {
+            $student = Student::find($this->studentid);
+            if($student)
+            {
+                $student->delete();
+            }
+            $this->notif = true;
+            session()->flash('message', 'Data Berhasil dihapus.');
+            $this->resettext();
+            $this->dispatch('close-modal');
+        }
+
+
+       
        
     }
 
