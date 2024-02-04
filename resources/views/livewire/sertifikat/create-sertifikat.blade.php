@@ -4,6 +4,11 @@
             <div class="col">
                 <div class="card">
                     <div class="card-body">
+                        @if (session()->has('message'))
+                        @if ($notif)
+                            <h5 class="alert alert-info">{{ session('message') }} <a href="#" class="text-danger mr-5" wire:click="closenotif()">X</a></h5>
+                        @endif
+                        @endif
                         <h5 class="card-title">Pilih Data</h5>
                         <div class="mb-3">
                             <label class="form-label">pilih Student</label>

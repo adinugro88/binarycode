@@ -34,26 +34,43 @@ class CreateSertifikat extends Component
 
     public function setting()
     {
-        $this->resetErrorBag();
-        $this->cardpoint = [];
-        $this->formsetup = true;
-        $this->studentfix = Student::find($this->studentid);
         $this->kategorifix = Kategori::find($this->kategorid);
-        $point = Kategoripoint::where('kategori_id',$this->kategorid)->get();
-        $arraypoint = json_decode(json_encode($point),TRUE);
-        //dd($this->kategorifix->id);
-        if($this->kategorifix->id == 3)
+        $this->studentfix = Student::find($this->studentid);
+        //dd($this->kategorifix->id,$this->studentfix->nonik );
+            if( $this->studentfix->nonik == 0  && $this->kategorifix->id != 3 )
         {
-            foreach($point as $data){
-                $this->cardpoint[] =['point'=>$data['judul'],'score'=>'','detail'=>''];
-            }
+            
+            $this->notif = true;
+            session()->flash('message', 'Sertifikat tidak bisa dibuat karena nonik student belum ada.');
+            $this->resetall();   
         }
         else 
         {
-            foreach($point as $data){
-                $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
+            $this->resetErrorBag();
+            $this->cardpoint = [];
+            $this->formsetup = true;
+            $point = Kategoripoint::where('kategori_id',$this->kategorid)->get();
+            $arraypoint = json_decode(json_encode($point),TRUE);
+            //dd($this->kategorifix->id);
+            if($this->kategorifix->id == 3)
+            {
+                foreach($point as $data){
+                    $this->cardpoint[] =['point'=>$data['judul'],'score'=>'','detail'=>''];
+                }
+            }
+            else 
+            {
+                foreach($point as $data){
+                    $this->cardpoint[] =['point'=>$data['judul'],'score'=>''];
+                }
             }
         }
+    }
+       
+    
+
+    public function closenotif(){
+        $this->notif = false;
     }
 
     public function resetall()
@@ -62,6 +79,7 @@ class CreateSertifikat extends Component
         $this->studentfix = '';
         $this->kategorifix = '';
         $this->resetErrorBag();
+        
     }
 
     protected function rules()
