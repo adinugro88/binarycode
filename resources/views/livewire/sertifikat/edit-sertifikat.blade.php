@@ -3,7 +3,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Input Sertifikat</h5>
+                    <h5 class="card-title">Edit Sertifikat</h5>
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-md-2">STUDENT NAME</label>
@@ -113,9 +113,11 @@
                             <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15"
                                 rows="5"></textarea>
                         </div>
-                        <a href="/admin/sertifikat" > <button class="btn btn-info">Back</button> </a>
-                        <button wire:click='update' type="submit" class="btn btn-primary mt-4">Simpan Data</button>
+                       
                     </div>
+
+                    <a href="/admin/sertifikat"  type="submit" class="btn btn-secondary" > back </a>
+                    <button wire:click='update' type="submit" class="btn btn-primary">Simpan Data</button>
                 </div>
             </div>
           

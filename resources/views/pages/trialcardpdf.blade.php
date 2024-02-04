@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.pdflay')
 
 @section('content')
 
@@ -110,5 +110,3 @@
 
 
 @endsection
-
-
