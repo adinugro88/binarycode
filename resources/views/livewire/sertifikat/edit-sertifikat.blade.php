@@ -10,15 +10,32 @@
                             <input disabled class="form-control col-10" type="text" value="{{$card->Student->name}}">
                         </div>
                     </div>
-                    @if ($card->kategori_id !=3 )
+                    @if ($kategorid!=3) 
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-md-2">STUDENT ID</label>
                             <input wire:model='kategoriup' disabled class="form-control col-10" type="text"
-                                value="{{$card->Student->nonik}}">
+                                value="{{$studentfix->nonik}}">
                         </div>
-                    </div>
-                    @endif
+                    </div> 
+                    @else
+                    <div class="mb-3">
+                        <div class="row">
+                            <label class="form-label col-md-2">To Class {{$card->toclass}}</label>
+                            <select wire:model='toclass' name="" id="" class="form-control">
+                                @foreach ($kategorilist as $item)
+                                    <option value="{{$item->id}}" @if($item->id == $card->toclass) {{'selected'}} @endif  >{{$item->nama}}</option>
+                                @endforeach
+                            </select>
+                            @error('toclass')
+                            <span class="invalid-feedback">
+                                score diatas wajib diisi
+                            </span>
+                            @enderror
+                        </div>
+                    </div> 
+                    @endif 
+                
                     
                     <div class="mb-3">
                         <div class="row">

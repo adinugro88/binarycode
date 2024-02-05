@@ -18,9 +18,6 @@ class Viewsertifikat extends Component
     public $cardpoint = [];
     public $tanggal,$note,$card; 
     public $toclass;
-
-
-
     public $id;
 
     public function mount($id)
@@ -34,7 +31,6 @@ class Viewsertifikat extends Component
         $this->toclass = Kategori::where('id',$this->card->toclass)->get();
         $point = Cdpoint::where('cards_id',$this->card->id)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
-        
         //  dd($arraypoint);
         foreach($point as $data){
             $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score']];

@@ -6,7 +6,7 @@
         /* A5 dimensions */
         height: 155mm;
         width: 210mm;
-        border: 10px solid #278fcd ;
+        border: 10px solid #f8c788 ;
         margin: 0;
     }
 
@@ -44,7 +44,7 @@
                 <b class="tulisan" style="font-size: 20px">CLASS</b>
             </div>
             <div class="col-8" style="background-color: beige;">
-                <b class="tulisan" style="font-size: 20px" class="text-uppercase">: {{$toclass}}</b>
+                <b class="tulisan" style="font-size: 20px" class="text-uppercase">: {{$toclass->nama}}</b>
             </div>
             <div class="col-4" style="background-color: beige;">
                 <b class="tulisan" style="font-size: 20px">CONTACT</b>

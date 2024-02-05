@@ -21,6 +21,7 @@ class EditSertifikat extends Component
     public $studentfix,$kategorifix;
     public $cardpoint = [];
     public $tanggal,$note,$card; 
+    public $toclass,$kategorilist;
 
 
 
@@ -28,12 +29,15 @@ class EditSertifikat extends Component
 
     public function mount($id)
     {
+
         $this->id = $id;
         $this->card = card::find($id);
         $this->tanggal = $this->card->tanggal;
         $this->note = $this->card->Note;
         $this->studentid = $this->card->student_id;
         $this->kategorid = $this->card->kategori_id;
+        $this->kategorilist = Kategori::all();
+        //dd(  $this->card );
 
         $point = Cdpoint::where('cards_id',$this->card->id)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
@@ -66,6 +70,7 @@ class EditSertifikat extends Component
                     'Note'              => $this->note,
                     'student_id'        => $this->studentid,
                     'kategori_id'       => $this->kategorid,
+                    'toclass'           => $this->toclass,
                 ]);
                 
 
