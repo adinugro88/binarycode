@@ -44,7 +44,7 @@
                 <b class="tulisan" style="font-size: 20px">CLASS</b>
             </div>
             <div class="col-8" style="background-color: beige;">
-                <b class="tulisan" style="font-size: 20px" class="text-uppercase">: {{$card->Kategori->nama}}</b>
+                <b class="tulisan" style="font-size: 20px" class="text-uppercase">: {{$toclass}}</b>
             </div>
             <div class="col-4" style="background-color: beige;">
                 <b class="tulisan" style="font-size: 20px">CONTACT</b>

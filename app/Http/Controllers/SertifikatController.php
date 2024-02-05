@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\Cdpoint;
+use App\Models\Kategori;
 
 
 class SertifikatController extends Controller
@@ -40,8 +41,9 @@ class SertifikatController extends Controller
     {
         $dataid = $id;
         $card = Card::find($id);
+        $toclass = Kategori::find($card->toclass);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
-        return view("pages.trialcard",compact('card','cardpoint'));
+        return view("pages.trialcard",compact('card','cardpoint','toclass'));
     }
 
     public function download(string $id)

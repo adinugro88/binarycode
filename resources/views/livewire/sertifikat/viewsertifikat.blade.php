@@ -32,7 +32,7 @@
                         <b style="font-size: 20px">CLASS :</b> 
                     </div>
                     <div class="col-10">
-                        <span style="font-size: 20px" class="text-uppercase">{{$card->Kategori->nama}}</span> 
+                        <span style="font-size: 20px" class="text-uppercase">{{$toclass}} asdasd</span> 
                     </div>
                     <div class="col-2">
                         <b style="font-size: 20px">TERM :</b> 

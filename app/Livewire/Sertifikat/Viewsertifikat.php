@@ -5,7 +5,7 @@ namespace App\Livewire\Sertifikat;
 use Livewire\Component;
 use App\Models\Card;
 use App\Models\Cdpoint;
-
+use App\Models\kategori;
 use App\Models\Kategoripoint;
 
 class Viewsertifikat extends Component
@@ -17,6 +17,7 @@ class Viewsertifikat extends Component
     public $studentfix,$kategorifix;
     public $cardpoint = [];
     public $tanggal,$note,$card; 
+    public $toclass;
 
 
 
@@ -30,7 +31,7 @@ class Viewsertifikat extends Component
         $this->note = $this->card->Note;
         $this->studentid = $this->card->student_id;
         $this->kategorid = $this->card->kategori_id;
-
+        $this->toclass = Kategori::where('id',$this->card->toclass)->get();
         $point = Cdpoint::where('cards_id',$this->card->id)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
         
