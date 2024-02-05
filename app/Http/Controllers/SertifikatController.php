@@ -44,6 +44,14 @@ class SertifikatController extends Controller
         return view("pages.trialcard",compact('card','cardpoint'));
     }
 
+    public function download(string $id)
+    {
+        $dataid = $id;
+        $card = Card::find($id);
+        $cardpoint = Cdpoint::where('cards_id',$id)->get();
+        return view("pages.trialcardpdf",compact('card','cardpoint'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -19,7 +19,7 @@
                         <h5 class="card-title">Student</h5>
                         <a  class="btn btn-success m-b-xs" href="/admin/createsertifikat"
                             data-bs-target="">
-                            tambah murid
+                            Buat Sertifikat
                     </a>
                         <div class="table-responsive" style="min-height: 400px;">
                             <table class="table" >

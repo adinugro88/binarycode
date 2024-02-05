@@ -15,31 +15,26 @@
     <link rel="shortcut icon" href="https://www.binarykiddo.id/storage/settings/August2023/bYKHy9OozI900nFJciQl.png" type="image/x-icon">
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,700,800&display=swap" rel="stylesheet">
-    <link href="../../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/plugins/font-awesome/css/all.min.css" rel="stylesheet">
-    <link href="../../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+    <link href="{{asset('/assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/plugins/font-awesome/css/all.min.css')}}" rel="stylesheet">
 
 
-    <!-- Theme Styles -->
-    <link href="../../assets/css/main.min.css" rel="stylesheet">
-    <link href="../../assets/css/custom.css" rel="stylesheet">
-
+    @yield('stylemaster')
 
 </head>
 
 <body>
 
-        <div class="page-content">
-            <div class="main-wrapper">
+   
                 @yield('content')
-            </div>
 
-    
-    <!-- Javascripts -->
+    {{-- <!-- Javascripts -->
     <script src="../../assets/plugins/jquery/jquery-3.4.1.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="../../assets/plugins/perfectscroll/perfect-scrollbar.min.js"></script>
+    <script src="../../assets/js/main.min.js"></script> --}}
     
 
 </body>
