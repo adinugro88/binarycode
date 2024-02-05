@@ -22,6 +22,7 @@
                             <label class="form-label">pilih Kategori</label>
                             <select class="form-select" wire:model.defer='kategorid'>
                                 @foreach ($kategori as $item)
+                               
                                 <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach
                             </select>
@@ -47,30 +48,52 @@
                             </div>
                         </div>
 
-                        @if ($kategorifix->id==3)   
-                        @else
+                        @if ($kategorifix->id!=3) 
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-md-2">STUDENT ID</label>
                                 <input wire:model='kategoriup' disabled class="form-control col-10" type="text"
                                     value="{{$studentfix->nonik}}">
                             </div>
-                        </div>
-                        @endif
+                        </div> 
+                        @else
+                        <div class="mb-3">
+                            <div class="row">
+                                <label class="form-label col-md-2">To Class</label>
+                                <select wire:model='toclass' name="" id="" class="form-control">
+                                    <option selected>Piih kelas Tujuan</option>
+                                    @foreach ($kategorilist as $item)
+                                        <option value="{{$item->id}}">{{$item->nama}}</option>
+                                    @endforeach
+                                </select>
+                                @error('toclass')
+                                <span class="invalid-feedback">
+                                    score diatas wajib diisi
+                                </span>
+                                @enderror
+                            </div>
+                        </div> 
+                        @endif 
+                    
                    
 
-                        <div class="mb-3">
+                        {{-- <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-2">CLASS</label>
                                 <input wire:model='studentup' disabled class="form-control col-md-10" type="text"
                                     value="{{$kategorifix->nama}}">
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-2">TERM</label>
                                 <input wire:model='tanggal' type="date" class="form-control" />
+                                @error('tanggal')
+                                <span class="invalid-feedback">
+                                    score diatas wajib diisi
+                                </span>
+                                @enderror
                             </div>
                         </div>
 

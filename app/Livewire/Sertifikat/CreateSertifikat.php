@@ -19,6 +19,7 @@ class CreateSertifikat extends Component
     public $cardpoint = [];
     public $tanggal,$note;
     public $notif = false;
+    public $kategorilist,$toclass;
     
     public function mount()
     {
@@ -51,7 +52,10 @@ class CreateSertifikat extends Component
             $this->formsetup = true;
             $point = Kategoripoint::where('kategori_id',$this->kategorid)->get();
             $arraypoint = json_decode(json_encode($point),TRUE);
-            //dd($this->kategorifix->id);
+    
+            $this->kategorilist = Kategori::WhereNot('id',$this->kategorid)->get();
+
+            //dd($this->kategorilist);
             if($this->kategorifix->id == 3)
             {
                 foreach($point as $data){
@@ -91,7 +95,8 @@ class CreateSertifikat extends Component
                 'note'                   => 'required',
                 'cardpoint'              => 'required|array|min:1',
                 'cardpoint.*.score'      => 'required|numeric',
-                'cardpoint.*.detail'      => 'required'
+                'cardpoint.*.detail'      => 'required',
+                'toclass'      => 'required'
             ];
         }
 
@@ -104,9 +109,6 @@ class CreateSertifikat extends Component
                 'cardpoint.*.score'      => 'required|numeric'
             ];
         }
-
-
-        
     }
 
     public function simpan()
@@ -117,6 +119,7 @@ class CreateSertifikat extends Component
             'Note'              => $this->note,
             'student_id'        => $this->studentid,
             'kategori_id'       => $this->kategorid,
+            'toclass'           => $this->toclass,
         ]);
         if($this->kategorifix->id == 3)
         {

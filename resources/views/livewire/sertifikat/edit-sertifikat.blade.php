@@ -10,6 +10,7 @@
                             <input disabled class="form-control col-10" type="text" value="{{$card->Student->name}}">
                         </div>
                     </div>
+                    @if ($card->kategori_id !=3 )
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-md-2">STUDENT ID</label>
@@ -17,6 +18,8 @@
                                 value="{{$card->Student->nonik}}">
                         </div>
                     </div>
+                    @endif
+                    
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-2">CLASS</label>
