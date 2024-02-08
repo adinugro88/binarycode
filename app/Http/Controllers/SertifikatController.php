@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Card;
 use App\Models\Cdpoint;
 use App\Models\Kategori;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class SertifikatController extends Controller
@@ -52,8 +53,14 @@ class SertifikatController extends Controller
         $card = Card::find($id);
         $toclass = Kategori::find($card->toclass);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
-        return view("pages.trialcardpdf",compact('card','cardpoint','toclass'));
+
+        $pdf = Pdf::loadView('pages.trialcardpdf',compact('card','toclass','cardpoint'));
+  
+        return $pdf->download('invoice.pdf');
+
     }
+
+
 
     /**
      * Show the form for creating a new resource.
