@@ -4,7 +4,7 @@
     @page {
         size: 18cm 11.2cm landscape;
         margin:0em 0em 0em 0em;
-        padding: 0em
+        padding: 0em;
     }
     body{
         padding: 0px;
@@ -24,14 +24,14 @@
                     <b style="font-size: 35px;"> TRIAL CARD</b>
                 </td>
                 <td style="height:15px; vertical-align: middle;text-align:right">
-                    <span style="font-size: 18px;font-weight: 600;" > {{ Carbon\Carbon::parse($card->tanggal)->format('d F Y')  }}</span>
+                    <span style="font-size: 18px;font-weight: 600;text-transform:uppercase;" > {{ Carbon\Carbon::parse($card->tanggal)->format('d F Y')  }}</span>
                 </td>
             </tr>
         </table>
         <table style="background-color: beige;width: 100%;border:8px solid #278fcd;">
             <tr >
                 <td style="height:20px;width: 8%;"> <b class="tulisan" >STUDENT NAME</b></td>
-                <td style="height:20px;width: 30%;text-transform:uppercase;">: {{$card->Student->name}} </td>
+                <td style="height:20px;width: 30%;text-transform:uppercase;">: <b>{{$card->Student->name}} </b></td>
             </tr>
             <tr >
                 <td style="height:20px;"> <b class="tulisan" >CLASS</b></td>
