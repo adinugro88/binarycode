@@ -31,11 +31,11 @@
         <table style="background-color: beige;width: 100%;border:8px solid #278fcd;">
             <tr >
                 <td style="height:20px;width: 8%;"> <b class="tulisan" >STUDENT NAME</b></td>
-                <td style="height:20px;width: 30%;">: {{$card->Student->name}}</td>
+                <td style="height:20px;width: 30%;text-transform:uppercase;">: {{$card->Student->name}} </td>
             </tr>
             <tr >
                 <td style="height:20px;"> <b class="tulisan" >CLASS</b></td>
-                <td style="height:20px;">: {{$toclass->nama}}</td>
+                <td style="height:20px;text-transform:uppercase;">: <b>{{$toclass->nama}}</b> </td>
             </tr>
             <tr style="height: 15px;vertical-align: middle;">
                 <td style="height:20px;"><b class="tulisan" >CONTACT</b></td>
