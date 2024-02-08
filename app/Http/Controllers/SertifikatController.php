@@ -14,12 +14,12 @@ class SertifikatController extends Controller
     /**
      * Display a listing of the resource.
      */
-    
+
      public function __construct()
      {
          $this->middleware('auth');
      }
-     
+
     public function index()
     {
         return view("pages.sertifikat");
@@ -54,9 +54,9 @@ class SertifikatController extends Controller
         $toclass = Kategori::find($card->toclass);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
 
-        $pdf = Pdf::loadView('pages.trialcardpdf',compact('card','toclass','cardpoint'));
-  
-        return $pdf->download('invoice.pdf');
+        $pdf = Pdf::loadView('pages.trialcardpdf',compact('card','toclass','cardpoint'))->setWarnings(true);
+        $pdf->set_option('isHtml5ParserEnabled',true);
+        return $pdf->stream();
 
     }
 
@@ -89,7 +89,7 @@ class SertifikatController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    
+
 
     /**
      * Update the specified resource in storage.

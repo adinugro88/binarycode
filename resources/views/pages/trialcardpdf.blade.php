@@ -1,25 +1,35 @@
 <html>
 <head>
    <style>
-    @page { size: 21cm 14cm landscape; }
+    @page {
+        size: 18cm 11.2cm landscape;
+        margin:0em 0em 0em 0em;
+        padding: 0em
+    }
+    body{
+        padding: 0px;
+        margin: 0px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+
+    }
    </style>
 </head>
 
 <body>
-        <table  style="margin-left:-10px; background-color: beige;width: 100%;border:8px solid #278fcd;">
+        <table  style="background-color: beige;width: 100%;border:8px solid #278fcd;">
             <tr>
                 <td>
-                    <img src=" {{ public_path('logo.png') }}/" width="75" alt="">
+                    <img src="logo.png" width="75" alt="">
                 </td>
                 <td  style="height: 15px;text-align:center;vertical-align: middle;">
                     <b style="font-size: 35px;"> TRIAL CARD</b>
                 </td>
-                <td style="height:15px; vertical-align: middle;">
+                <td style="height:15px; vertical-align: middle;text-align:right">
                     <span style="font-size: 18px;font-weight: 600;" > {{ Carbon\Carbon::parse($card->tanggal)->format('d F Y')  }}</span>
                 </td>
             </tr>
         </table>
-        <table style="margin-left:-10px; background-color: beige;width: 100%;border:8px solid #278fcd;">
+        <table style="background-color: beige;width: 100%;border:8px solid #278fcd;">
             <tr >
                 <td style="height:20px;width: 8%;"> <b class="tulisan" >STUDENT NAME</b></td>
                 <td style="height:20px;width: 30%;">: {{$card->Student->name}}</td>
@@ -35,10 +45,10 @@
             </tr>
         </table>
 
-    <table style="margin-left:-10px; width: 100%;border:8px solid #278fcd;">
+    <table style="width: 100%;border:8px solid #278fcd;">
         <thead >
             <tr>
-                <th style="height: 25px;font-size: 15px;background-color: #278fcd ;color:white">
+                <th style="height: 25px;text-align:left;font-size: 15px;background-color: #278fcd ;color:white">
                     SUBJECT</th>
                 <th style="height: 25px;text-align:center;font-size: 15px;background-color: #278fcd ;color:white">
                     SCORE</th>
@@ -54,7 +64,7 @@
         </tr>
         @endforeach
     </table>
-    <table style="margin-left:-10px; width: 100%;border:8px solid #278fcd;">
+    <table style="width: 100%;border:8px solid #278fcd;">
         <thead >
             <tr>
                 <th
