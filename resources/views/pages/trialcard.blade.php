@@ -6,8 +6,6 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-
-
                 <div class="row">
                     <div class="col-md-6">
                         <h3 style="font-size: 40px;vertical-align:baseline"><b> TRIAL CARD</b></h3>
