@@ -61,6 +61,19 @@ class SertifikatController extends Controller
     }
 
 
+    public function downloadserifikat (string $id )
+    {
+        $dataid = $id;
+        $card = Card::find($id);
+        $toclass = Kategori::find($card->toclass);
+        $cardpoint = Cdpoint::where('cards_id',$id)->get();
+
+        $pdf = Pdf::loadView('pages.sertifikatcardpdf',compact('card','toclass','cardpoint'))->setWarnings(true);
+        $pdf->set_option('isHtml5ParserEnabled',true);
+        return $pdf->stream();
+    }
+
+
 
     /**
      * Show the form for creating a new resource.

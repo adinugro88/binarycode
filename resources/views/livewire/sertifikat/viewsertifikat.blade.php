@@ -2,8 +2,6 @@
     <div class="col">
         <div class="card">
             <div class="card-body">
-
-
                 <div class="row">
                     <div class="col-md-6">
                         <h3 style="font-size: 60px"><b>STUDENT REPORT</b> </h3>
@@ -16,29 +14,29 @@
                 <div class="col-12 mb-2" style="font-size: 35px" ><b>Binary Kiddo</b> </div>
                 <div class="row">
                     <div class="col-2">
-                       <b style="font-size: 20px">STUDENT NAME :</b>
+                       <b style="font-size: 20px">STUDENT NAME </b>
                     </div>
                     <div class="col-10">
-                        <span style="font-size: 20px" class="text-uppercase">{{$card->Student->name}}</span>
+                        <span style="font-size: 20px" class="text-uppercase">: {{$card->Student->name}}</span>
 
                     </div>
                     <div class="col-2">
-                        <b style="font-size: 20px">STUDENT ID NO :</b>
+                        <b style="font-size: 20px">STUDENT ID NO </b>
                     </div>
                     <div class="col-10">
-                        <span style="font-size: 20px">{{$card->Student->nonik}}</span>
+                        <span style="font-size: 20px">: {{$card->Student->nonik}}</span>
                     </div>
                     <div class="col-2">
-                        <b style="font-size: 20px">CLASS :</b>
+                        <b style="font-size: 20px">CLASS </b>
                     </div>
                     <div class="col-10">
-                        <span style="font-size: 20px" class="text-uppercase">{{$toclass}} asdasd</span>
+                        <span style="font-size: 20px" class="text-uppercase">: {{$card->Kategori->nama}} </span>
                     </div>
                     <div class="col-2">
-                        <b style="font-size: 20px">TERM :</b>
+                        <b style="font-size: 20px">TERM </b>
                     </div>
                     <div class="col-10">
-                        <span style="font-size: 20px" class="text-uppercase">{{ Carbon\Carbon::parse($card->tanggal)->format('F Y')  }}</span>
+                        <span style="font-size: 20px" class="text-uppercase">: {{ Carbon\Carbon::parse($card->tanggal)->format('F Y')  }}</span>
 
                     </div>
                 </div>
@@ -101,7 +99,7 @@
                 </div>
 
                 <a  href="/admin/sertifikat" wire:click='setting' type="submit" class="btn btn-secondary">Back</a>
-                <button class="btn btn-primary text-right">Download File PDF</button>
+                <a target="_blank" href="/admin/sertifikat/download/{{$id}}" class="btn btn-primary text-right">Download File PDF</a>
             </div>
             <div>
             </div>
