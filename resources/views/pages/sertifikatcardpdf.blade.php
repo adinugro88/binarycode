@@ -13,8 +13,20 @@
     }
 
     td{
-        color: #1d6962
+        color: #1d6962;
     }
+
+    .one{
+        float: left;
+        width: 25%;
+    }
+
+    .two{
+        float: right;
+        width: 75%;
+    }
+
+   .stripe tr:nth-child(odd) {background-color: #f2f2f2;}
    </style>
 </head>
 
@@ -22,7 +34,7 @@
     <div class="nama"></div>
     <div style="page-break-before: always;"></div>
 
-        <table  style="width: 100%; border-bottom:2px solid #97C3d9">
+        <table  style="width: 100%; border-bottom:5px solid #97C3d9">
             <tr>
                 <td  style="height: 15px;text-align:left;vertical-align: middle;">
                     <b style="font-size: 35px;"> STUDENT REPORT</b>
@@ -48,17 +60,17 @@
             </tr>
             <tr style="height: 15px;vertical-align: middle;">
                 <td style="height:20px;"><b class="tulisan" >TERM</b></td>
-                <td style="height:20px;"><b class="tulisan"
-                    class="text-uppercase">:  {{ Carbon\Carbon::parse($card->tanggal)->format('d F Y')  }}</b></td>
+                <td style="height:20px;text-transform:uppercase"><b class="tulisan"
+                   >:  {{ Carbon\Carbon::parse($card->tanggal)->format(' F Y')  }}</b></td>
             </tr>
         </table>
 
-    <table style="width: 100%;">
+    <table class="stripe" style="width: 100%;">
         <thead >
             <tr>
-                <th style="height: 25px;text-align:left;font-size: 15px;background-color: #278fcd ;color:white">
+                <th style="height: 25px;text-align:left;font-size: 15px;background-color: #1d6962 ;color:white">
                     SUBJECT</th>
-                <th style="height: 25px;text-align:center;font-size: 15px;background-color: #278fcd ;color:white">
+                <th style="height: 25px;text-align:center;font-size: 15px;background-color: #1d6962 ;color:white">
                     SCORE</th>
             </tr>
         </thead>
@@ -69,16 +81,33 @@
         </tr>
         @endforeach
     </table>
-    <table style="width: 100%;">
+    <table class="stripe one">
+        <thead class="thead-dark">
+            <tr>
+                <th  style="height: 25px;text-align:center!important;font-size: 15px;background-color: #1d6962 ;color:white">SCORE SCALE</th>
+
+            </tr>
+            </thead>
+            <tr>
+                <td style="font-size: 12px">>80 = Achieving</td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px">60-80 = Developing</td>
+            </tr>
+            <tr>
+                <td style="font-size: 12px"><60 = Need Improvement</td>
+            </tr>
+    </table>
+    <table class="stripe two" >
         <thead >
             <tr>
                 <th
-                    style="height: 25px;text-align:center!important;font-size: 15px;background-color: #278fcd ;color:white">
+                    style="height: 25px;text-align:center!important;font-size: 15px;background-color: #1d6962 ;color:white">
                     NOTES</th>
             </tr>
         </thead>
         <tr>
-            <td rowspan="3" style="font-size: 12px;">{{$card->Note}}</td>
+            <td rowspan="3" style="font-size: 12px;height: 35px;line-height:2;vertical-align:top;padding-top:0;">{{$card->Note}}</td>
         </tr>
     </table>
 
