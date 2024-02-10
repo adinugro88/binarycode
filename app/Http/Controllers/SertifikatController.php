@@ -67,8 +67,9 @@ class SertifikatController extends Controller
         $card = Card::find($id);
         $toclass = Kategori::find($card->toclass);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
+        $image = "backgtemp.jpg";
 
-        $pdf = Pdf::loadView('pages.sertifikatcardpdf',compact('card','toclass','cardpoint'))->setWarnings(true);
+        $pdf = Pdf::loadView('pages.sertifikatcardpdf',compact('card','toclass','cardpoint','image'))->setWarnings(true);
         $pdf->set_option('isHtml5ParserEnabled',true);
         return $pdf->stream();
     }
