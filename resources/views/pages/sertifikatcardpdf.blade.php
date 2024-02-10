@@ -65,7 +65,7 @@
         }
 
         .padbody {
-            padding: 3em;
+            padding: 1em 2em 1em 2em;
         }
 
         @font-face {
@@ -206,7 +206,7 @@
             </tr>
         </table>
 
-        <div class="row " style="padding-top:180px;">
+        <div class="row " style="padding-top:150px;">
             <div class="col-md-12 mt-4 text-right pr-3" style="text-align: right;padding-right:5px;">
                 <p class="" style="font-size: 14px;color:#1d6962">www.binarykiddo.id</p>
             </div>
