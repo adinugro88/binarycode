@@ -31,7 +31,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/editsertifikat/{id}', [App\Http\Controllers\SertifikatController::class, 'edit'])->name('editsertifikat');
     Route::get('/viewsertifikat/{id}', [App\Http\Controllers\SertifikatController::class, 'view'])->name('viewsertifikat');
     Route::get('/viewtrialcard/{id}', [App\Http\Controllers\SertifikatController::class, 'trialcard'])->name('viewtrialcard');
-    Route::get('trialcard/download/{id}', [App\Http\Controllers\SertifikatController::class, 'download'])->name('downloadtrialcard');
+    Route::get('/trialcard/download/{id}', [App\Http\Controllers\SertifikatController::class, 'download'])->name('downloadtrialcard');
 
     Route::get('sertifikat/download/{id}', [App\Http\Controllers\SertifikatController::class, 'downloadserifikat'])->name('downloadsertifikatcard');
 

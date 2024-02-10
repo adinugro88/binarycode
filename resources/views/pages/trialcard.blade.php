@@ -97,7 +97,7 @@
                    </div>
                 </div>
                 <a href="/admin/sertifikat"  type="submit" class="btn btn-secondary">Back</a>
-                <a  target="_blank" href="/admin/sertifikat/download/{{$card->id}}" class="btn btn-primary text-right">Download File PDF</a>
+                <a  target="_blank" href="/admin/trialcard/download/{{$card->id}}" class="btn btn-primary text-right">Download File PDF</a>
             </div>
             <div>
             </div>
