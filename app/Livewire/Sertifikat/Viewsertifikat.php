@@ -5,7 +5,7 @@ namespace App\Livewire\Sertifikat;
 use Livewire\Component;
 use App\Models\Card;
 use App\Models\Cdpoint;
-use App\Models\kategori;
+use App\Models\Kategori;
 use App\Models\Kategoripoint;
 
 class Viewsertifikat extends Component
@@ -16,7 +16,7 @@ class Viewsertifikat extends Component
     public $formsetup = false;
     public $studentfix,$kategorifix;
     public $cardpoint = [];
-    public $tanggal,$note,$card; 
+    public $tanggal,$note,$card;
     public $toclass;
     public $id;
 
