@@ -201,7 +201,7 @@
                         </thead>
             <tr>
                 <td rowspan="3"
-                    style="text-align:center; font-size: 14px;height: 79px;line-height:2;vertical-align:top;padding-top:0;">
+                    style="padding-left:10px;text-align:left; font-size: 15px;height: 79px;line-height:2;vertical-align:top;padding-top:0;">
                     {{$card->Note}}</td>
             </tr>
         </table>
