@@ -20,7 +20,7 @@ class EditSertifikat extends Component
     public $formsetup = false;
     public $studentfix,$kategorifix;
     public $cardpoint = [];
-    public $tanggal,$note,$card; 
+    public $tanggal,$note,$card;
     public $toclass,$kategorilist;
 
 
@@ -41,7 +41,7 @@ class EditSertifikat extends Component
 
         $point = Cdpoint::where('cards_id',$this->card->id)->get();
         $arraypoint = json_decode(json_encode($point),TRUE);
-        
+
         // dd($arraypoint);
 
         if($this->kategorid == 3)
@@ -50,20 +50,20 @@ class EditSertifikat extends Component
                 $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score'],'detail'=>$data['detail']];
             }
         }
-        else 
+        else
         {
             foreach($point as $data){
                 $this->cardpoint[] =['point'=>$data['point'],'score'=>$data['score']];
             }
         }
-        
+
     }
 
     public function update()
     {
-       
-        if($this->id && $this->kategorid == 3) 
-        { 
+
+        if($this->id && $this->kategorid == 3)
+        {
                 $card = Card::find($this->id);
                 $card->update([
                     'tanggal'           => $this->tanggal,
@@ -72,7 +72,7 @@ class EditSertifikat extends Component
                     'kategori_id'       => $this->kategorid,
                     'toclass'           => $this->toclass,
                 ]);
-                
+
 
                 $kategoripoint = Cdpoint::where('cards_id', $this->id)->delete();
                 foreach ($this->cardpoint as $key => $value) {
@@ -84,11 +84,11 @@ class EditSertifikat extends Component
                     ]);
                 }
         }
-        else 
+        else
         {
-            
+
             $card = Card::find($this->id);
-          
+
             $card->update([
                 'tanggal'           => $this->tanggal,
                 'Note'              => $this->note,
@@ -105,11 +105,11 @@ class EditSertifikat extends Component
                 ]);
             }
         }
-        
+
         session()->flash('message', 'Sertifikat berhasil Update.');
-        $this->redirect('/admin/sertifikat'); 
+        $this->redirect('/admin/sertifikat');
     }
-    
+
     public function render()
     {
         return view('livewire.sertifikat.edit-sertifikat');

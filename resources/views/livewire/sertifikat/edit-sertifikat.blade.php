@@ -10,14 +10,14 @@
                             <input disabled class="form-control col-10" type="text" value="{{$card->Student->name}}">
                         </div>
                     </div>
-                    @if ($kategorid!=3) 
+                    @if ($kategorid!=3)
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-md-2">STUDENT ID</label>
                             <input wire:model='kategoriup' disabled class="form-control col-10" type="text"
-                                value="{{$studentfix->nonik}}">
+                                value="{{$card->Student->nonik}}">
                         </div>
-                    </div> 
+                    </div>
                     @else
                     <div class="mb-3">
                         <div class="row">
@@ -33,10 +33,10 @@
                             </span>
                             @enderror
                         </div>
-                    </div> 
-                    @endif 
-                
-                    
+                    </div>
+                    @endif
+
+
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-2">CLASS</label>
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <hr>
-                         
+
 
                             @if ($kategorid==3)
                             @foreach ($cardpoint as $key => $item)
@@ -133,14 +133,14 @@
                             <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15"
                                 rows="5"></textarea>
                         </div>
-                       
+
                     </div>
 
                     <a href="/admin/sertifikat"  type="submit" class="btn btn-secondary" > back </a>
                     <button wire:click='update' type="submit" class="btn btn-primary">Simpan Data</button>
                 </div>
             </div>
-          
+
         </div>
 
     </div>
