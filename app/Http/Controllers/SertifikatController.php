@@ -51,7 +51,7 @@ class SertifikatController extends Controller
     {
         $dataid = $id;
         $card = Card::find($id);
-        $toclass = Kategori::find($card->toclass);
+        $toclass = Kategori::find($card->kategori_id);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
 
         $pdf = Pdf::loadView('pages.trialcardpdf',compact('card','toclass','cardpoint'))->setWarnings(true);
@@ -65,7 +65,7 @@ class SertifikatController extends Controller
     {
         $dataid = $id;
         $card = Card::find($id);
-        $toclass = Kategori::find($card->toclass);
+        $toclass = Kategori::find($card->kategori_id);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
         $image = "backgtemp.jpg";
 
