@@ -42,7 +42,7 @@ class SertifikatController extends Controller
     {
         $dataid = $id;
         $card = Card::find($id);
-        $toclass = Kategori::find($card->toclass);
+        $toclass = Kategori::find($card->kategori_id);
         $cardpoint = Cdpoint::where('cards_id',$id)->get();
         return view("pages.trialcard",compact('card','cardpoint','toclass'));
     }
