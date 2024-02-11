@@ -62,7 +62,7 @@ class EditSertifikat extends Component
 
     protected function rules()
     {
-        if($this->kategorifix->id == 3)
+        if($this->card->kategori_id == 3)
         {
             return [
                 'tanggal'                => 'required',
