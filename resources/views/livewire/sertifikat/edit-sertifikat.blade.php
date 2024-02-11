@@ -130,8 +130,14 @@
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-2">NOTES</label>
-                            <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15"
+                            <textarea wire:model='note' class="form-control col-12 @error('note') is-invalid @enderror" name="" id="" cols="15"
                                 rows="5"></textarea>
+
+                                @error('note')
+                                <span class="invalid-feedback">
+                                    Note diatas wajib diisi
+                                </span>
+                                @enderror
                         </div>
 
                     </div>

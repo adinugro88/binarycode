@@ -22,7 +22,7 @@
                             <label class="form-label">pilih Kategori</label>
                             <select class="form-select" wire:model.defer='kategorid'>
                                 @foreach ($kategori as $item)
-                               
+
                                 <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach
                             </select>
@@ -48,14 +48,14 @@
                             </div>
                         </div>
 
-                        @if ($kategorifix->id!=3) 
+                        @if ($kategorifix->id!=3)
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-md-2">STUDENT ID</label>
                                 <input wire:model='kategoriup' disabled class="form-control col-10" type="text"
                                     value="{{$studentfix->nonik}}">
                             </div>
-                        </div> 
+                        </div>
                         @else
                         <div class="mb-3">
                             <div class="row">
@@ -72,10 +72,10 @@
                                 </span>
                                 @enderror
                             </div>
-                        </div> 
-                        @endif 
-                    
-                   
+                        </div>
+                        @endif
+
+
 
                         {{-- <div class="mb-3">
                             <div class="row">
@@ -170,15 +170,21 @@
                                     </div>
                                     @endforeach
                                 @endif
-                          
+
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <div class="row">
                                 <label class="form-label col-2">NOTES</label>
-                                <textarea wire:model='note' class="form-control col-12" name="" id="" cols="15"
+                                <textarea wire:model='note' class="form-control col-12 @error('note') is-invalid @enderror" name="" id="" cols="15"
                                     rows="5"></textarea>
+
+                                    @error('note')
+                                    <span class="invalid-feedback">
+                                        Note diatas wajib diisi
+                                    </span>
+                                    @enderror
                             </div>
                             <button wire:click='simpan' type="submit" class="btn btn-primary mt-4">Simpan Data</button>
                         </div>
