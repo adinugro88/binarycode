@@ -69,8 +69,8 @@ class EditSertifikat extends Component
                 'note'                   => 'required',
                 'cardpoint'              => 'required|array|min:1',
                 'cardpoint.*.score'      => 'required|numeric',
-                'cardpoint.*.detail'      => 'required',
-                'toclass'      => 'required'
+                'cardpoint.*.detail'     => 'required',
+                'toclass'                => 'required'
             ];
         }
 
