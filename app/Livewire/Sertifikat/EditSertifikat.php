@@ -59,9 +59,36 @@ class EditSertifikat extends Component
 
     }
 
+
+    protected function rules()
+    {
+        if($this->kategorifix->id == 3)
+        {
+            return [
+                'tanggal'                => 'required',
+                'note'                   => 'required',
+                'cardpoint'              => 'required|array|min:1',
+                'cardpoint.*.score'      => 'required|numeric',
+                'cardpoint.*.detail'      => 'required',
+                'toclass'      => 'required'
+            ];
+        }
+
+        else
+        {
+            return [
+                'tanggal'                => 'required',
+                'note'                   => 'required',
+                'cardpoint'              => 'required|array|min:1',
+                'cardpoint.*.score'      => 'required|numeric'
+            ];
+        }
+    }
+
+
     public function update()
     {
-
+        $this->validate();
         if($this->id && $this->kategorid == 3)
         {
                 $card = Card::find($this->id);
