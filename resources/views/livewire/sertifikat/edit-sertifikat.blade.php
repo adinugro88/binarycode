@@ -40,7 +40,7 @@
                     <div class="mb-3">
                         <div class="row">
                             <label class="form-label col-2">CLASS</label>
-                            <input wire:model='studentup' disabled class="form-control col-md-10" type="text"
+                            <input  disabled class="form-control col-md-10" type="text"
                                 value="{{$card->Kategori->nama}}">
                         </div>
                     </div>
