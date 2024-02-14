@@ -2,7 +2,7 @@
 <head>
    <style>
     @page {
-        size: 18cm 11.8cm landscape;
+        size: 18cm 11.7cm landscape;
         margin:0em 0em 0em 0em;
         padding: 0em;
     }
