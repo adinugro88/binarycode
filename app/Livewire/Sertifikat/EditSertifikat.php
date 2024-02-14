@@ -29,7 +29,7 @@ class EditSertifikat extends Component
 
     public function mount($id)
     {
-
+        // dd( $this->id );
         $this->id = $id;
         $this->card = card::find($id);
         $this->tanggal = $this->card->tanggal;
@@ -86,8 +86,9 @@ class EditSertifikat extends Component
     }
 
 
-    public function updatedata()
+    public function updatecuy()
     {
+
         $this->validate();
         if($this->id && $this->kategorid == 3)
         {
