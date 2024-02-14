@@ -11,7 +11,7 @@ class Kategori extends Model
     protected $table = 'kategoris';
     protected $guarded = [];
 
-    
+
     // public function Student()
     // {
     //     return $this->belongsTo(Student::class,);
@@ -19,10 +19,10 @@ class Kategori extends Model
 
     public function Card()
     {
-        return $this->HasOne(Card::class,'kategori_id','id');
+        return $this->HasOne(Card::class,'kategori_id');
     }
 
- 
+
     public function Katgoripoint()
     {
         return $this->hasMany(Kategori::class,'kategori_id');
