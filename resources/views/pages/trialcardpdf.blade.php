@@ -35,7 +35,7 @@
             </tr>
             <tr >
                 <td style="height:20px;"> <b class="tulisan" >CLASS</b></td>
-                <td style="height:20px;text-transform:uppercase;">: <b>{{$toclass->nama}}</b> </td>
+                <td style="height:20px;text-transform:uppercase;">: <b>{{$card->toclass}}</b> </td>
             </tr>
             <tr style="height: 15px;vertical-align: middle;">
                 <td style="height:20px;"><b class="tulisan" >CONTACT</b></td>
