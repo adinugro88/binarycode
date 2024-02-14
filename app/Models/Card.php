@@ -19,10 +19,10 @@ class Card extends Model
 
     public function Kategori()
     {
-        return $this->belongsTo(Kategori::class,'kategori_id','id');
+        return $this->belongsTo(Kategori::class,'kategori_id');
     }
 
-  
+
     public function Cdpoint()
     {
         return $this->hasMany(App\Cdpoint::class,);

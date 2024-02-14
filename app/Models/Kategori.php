@@ -19,7 +19,7 @@ class Kategori extends Model
 
     public function Card()
     {
-        return $this->HasOne(Card::class,'kategori_id');
+        return $this->HasOne(Card::class,'kategori_id','id');
     }
 
 
