@@ -143,7 +143,7 @@
                     </div>
 
                     <a href="/admin/sertifikat"  type="submit" class="btn btn-secondary" > back </a>
-                    <button wire:click='update' type="submit" class="btn btn-primary">Simpan Data</button>
+                    <button wire:click='updatedata' type="submit" class="btn btn-primary">Simpan Data</button>
                 </div>
             </div>
 

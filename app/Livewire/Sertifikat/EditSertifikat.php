@@ -86,7 +86,7 @@ class EditSertifikat extends Component
     }
 
 
-    public function update()
+    public function updatedata()
     {
         $this->validate();
         if($this->id && $this->kategorid == 3)
