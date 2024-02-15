@@ -26,9 +26,19 @@
                     <div class="col-2">
                         <b style="font-size: 20px">CLASS :</b>
                     </div>
+                    @if (!empty($toclass->nama))
+
+                    @else
                     <div class="col-10">
                         <span style="font-size: 20px" class="text-uppercase">{{$toclass->nama}}</span>
                     </div>
+                    @endif
+
+
+
+                    @notempty
+
+
                     <div class="col-2">
                         <b style="font-size: 20px">TERM :</b>
                     </div>
