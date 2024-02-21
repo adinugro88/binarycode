@@ -88,9 +88,9 @@ class EditSertifikat extends Component
 
     public function updateshow()
     {
-        // dd("callback");
-        $this->validate();
-        if($this->id && $this->kategorid == 3)
+        //dd("callback",$this->id, $this->kategorid);
+        //$this->validate();
+        if($this->kategorid == 3)
         {
                 $card = Card::find($this->id);
                 $card->update([
@@ -114,7 +114,7 @@ class EditSertifikat extends Component
         }
         else
         {
-
+            dd("disini");
             $card = Card::find($this->id);
 
             $card->update([
