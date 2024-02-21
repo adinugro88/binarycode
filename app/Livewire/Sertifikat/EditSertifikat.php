@@ -86,9 +86,9 @@ class EditSertifikat extends Component
     }
 
 
-    public function updatecuy()
+    public function updateshow()
     {
-
+        // dd("callback");
         $this->validate();
         if($this->id && $this->kategorid == 3)
         {

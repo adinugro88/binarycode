@@ -142,8 +142,8 @@
 
                     </div>
                     <input type="hidden" name="" wire:model='id'>
-                    <a href="/admin/sertifikat"  type="submit" class="btn btn-secondary" > back </a>
-                    <button wire:click.prevent='updatecuy' type="submit" class="btn btn-primary">Simpan Data</button>
+                    <a href="/admin/sertifikat"  class="btn btn-secondary" > back </a>
+                    <button wire:click="updateshow" class="btn btn-primary">Simpan Data</button>
                 </div>
             </div>
 
