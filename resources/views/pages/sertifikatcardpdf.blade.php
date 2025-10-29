@@ -141,7 +141,7 @@
                     <b>{{$card->Student->name}} </b></td>
             </tr>
             <tr>
-                <td style="height:30px;width: 8%;"> <b class="tulisan">STUDENT NAME</b></td>
+                <td style="height:30px;width: 8%;"> <b class="tulisan">STUDENT ID</b></td>
                 <td style="height:30px;width: 30%;text-transform:uppercase;border-bottom: 2px solid #1d6962">:
                     <b>{{$card->Student->nonik}} </b></td>
             </tr>

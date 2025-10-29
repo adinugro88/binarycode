@@ -114,7 +114,7 @@ class EditSertifikat extends Component
         }
         else
         {
-            dd("disini");
+        
             $card = Card::find($this->id);
 
             $card->update([
